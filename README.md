@@ -158,6 +158,52 @@ $continuous-development run(24h)
 $continuous-development run(2h) 优先修复当前项目剩余 BUG
 ```
 
+### 混合修饰与后值覆盖规则 (Last-Write-Wins)
+
+支持空格分隔链式组合多个修饰符：
+
+```text
+$continuous-development always() run(0.1) xxx
+$continuous-development always() run(0.1) run(1)
+```
+
+- **后值覆盖前值**：当出现多个 `run(...)` 时（例如 `run(0.1) run(1)`），后面的 `run(1)` 会自动覆盖前面的 `0.1`，最终定时间隔为 `1h`。
+- **浮点/小数定时间隔**：支持小数小时，如 `run(0.1)`（约 6 分钟）、`run(0.5)`（30 分钟）等。
+- **混合目标说明**：修饰符之后附带的文本（如 `xxx`）会自动作为本次开发的任务目标。
+
+### 高级 Pythonic 组合式调用 (安全 AST 解析)
+
+Skill 内置标准 Python AST 抽象语法树解析（纯静态语法分析，零 `eval` 安全隐患，配套工具位于 `scripts/parse_invocation.py`），支持 Python 风格的工作流编排语法：
+
+#### 1. 下标管道切片语法
+```text
+$continuous-development[a, b, c(), d(1)]
+```
+将子代理 `a`、`b` 与参数化任务步骤 `c()`、`d(1)` 组合为批量有序流水线。
+
+#### 2. 二元算子组装 (`+`)
+```text
+$continuous-development a+b+c()+d(1.2)
+```
+使用 `+` 操作符自由连接子代理、无参任务流与带参数工作流（如 `d(1.2)` 传参）。
+
+#### 3. 动态可变参数 (`*args`, `**kw`)
+```text
+$continuous-development a+b+c()+d(1.2)+*args+**kw
+```
+支持在工作流末端附加可变位置参数与关键字配置，动态透传并发数、超时控制等配置。
+
+#### 4. 函数式 / Lambda 延迟与映射执行
+```text
+$continuous-development lambda(run())
+$continuous-development lambda(map(run()))
+$continuous-development lambda(a+b+c()+d(1.2))
+```
+- `lambda(run())`：延迟/条件触发定时续作策略。
+- `lambda(map(run()))`：跨多个任务批次映射续作调度。
+- `lambda(a+b+c()+d(1.2))`：构建惰性求值的复合工作流管道。
+
+
 ### 查看状态
 
 ```text

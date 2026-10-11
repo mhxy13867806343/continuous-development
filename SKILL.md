@@ -84,3 +84,11 @@ This means:
 - keep useful subagents working when safe independent tasks remain;
 - use an hourly scheduled continuation only as a recovery layer if the current run ends;
 - stop only on valid stop conditions.
+
+## Composable and Pythonic Invocations
+
+The skill supports advanced chained modifiers and composable Python expressions:
+
+- **Modifier Overrides (Last-Write-Wins)**: Chained modifiers like `always() run(0.1) run(1) xxx` where later specifications override earlier ones.
+- **Python AST Expressions**: Pipeline subscripts `[a,b,c(),d(1)]`, binary operators `a+b+c()+d(1.2)`, dynamic variadics `+*args+**kw`, and functional `lambda(...)` / `lambda(map(...))` forms safely parsed via `scripts/parse_invocation.py` without code evaluation.
+

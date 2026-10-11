@@ -129,19 +129,48 @@ Behavior:
 
 Supported intervals:
 
-- `1h`
-- `2h`
-- `3h`
-- `4h`
-- `6h`
-- `12h`
-- `24h`
+- Decimal/Fractional hours: `0.1` (~6m), `0.5` (~30m), `1.2`, etc.
+- Standard hours: `1h`, `2h`, `3h`, `4h`, `6h`, `12h`, `24h` (or bare integers `1`, `2`)
 
 Examples:
 
+- `$continuous-development run(0.1)`
 - `$continuous-development run(1h)`
 - `$continuous-development run(2h)`
 - `$continuous-development run(6h) continue the current priority backlog`
+
+### Multi-call chaining and override rule (Last-Write-Wins)
+
+Commands can chain multiple modifiers in space-separated format:
+
+- `$continuous-development always() run(0.1) xxx`
+- `$continuous-development always() run(0.1) run(1)`
+
+Rules:
+1. **Later calls override earlier calls**: When multiple `run(...)` intervals are present (e.g. `run(0.1) run(1)`), the rightmost/last specification takes precedence (`1` overwrites `0.1`).
+2. **Mixed modifiers**: `always()` sets persistent loop mode; `run(...)` sets the recovery/continuation interval. Chaining `always() run(0.1)` enters persistent mode with a 0.1h backup interval.
+3. **Trailing objectives**: Any text after modifiers (or after ` -- `) is captured as the task objective (e.g. `xxx`).
+
+### Pythonic composable expressions
+
+Supports composable Python syntax (AST-parsed with zero-eval safety via `scripts/parse_invocation.py`):
+
+1. **Subscript pipeline**:
+   `$continuous-development[a, b, c(), d(1)]`
+   Selects agents `a`, `b` and parameterized workstream steps `c()`, `d(1)`.
+
+2. **Binary operator composition (`+`)**:
+   `$continuous-development a+b+c()+d(1.2)`
+   Composes pipeline stages and concurrent agents using Python `+` expressions.
+
+3. **Dynamic variadics (`*args`, `**kw`)**:
+   `$continuous-development a+b+c()+d(1.2)+*args+**kw`
+   Permits variable positional arguments and configuration keyword arguments to be forwarded to orchestrators and subagents.
+
+4. **Functional / Lambda deferred execution**:
+   - `$continuous-development lambda(run())` — lazy-evaluated scheduled continuation.
+   - `$continuous-development lambda(map(run()))` — batch mapped continuation across tasks.
+   - `$continuous-development lambda(a+b+c()+d(1.2))` — deferred conditional workflow.
 
 Behavior:
 
@@ -219,6 +248,28 @@ all-versus-concurrency distinction, and the conditional picker behavior.
 - command = run
 - interval = 2h
 - objective = `fix current API bugs`
+
+`$continuous-development always() run(0.1) run(1) xxx`
+- chained modifiers: always() + run(0.1) + run(1)
+- override resolution: later run(1) overwrites run(0.1) -> interval = 1h
+- mode = always (with 1h recovery interval)
+- objective = `xxx`
+
+`$continuous-development[a,b,c(),d(1)]`
+- command = subscript pipeline
+- agents = `a`, `b`
+- tasks = `c()`, `d(1)`
+
+`$continuous-development a+b+c()+d(1.2)+*args+**kw`
+- command = binary composition
+- agents = `a`, `b`
+- parameterized tasks = `c()`, `d(1.2)`
+- dynamic variadics = forward `*args`, `**kw` to task orchestrators
+
+`$continuous-development lambda(run())` / `lambda(map(run()))`
+- command = deferred functional lambda
+- is_lambda = true
+- evaluation = deferred lazy schedule / batch mapping
 
 Additional text refines the objective but does not replace the continuous-development rules.
 
