@@ -1,6 +1,6 @@
 ---
 name: continuous-development
-description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes.
+description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes. Supports Sub-agent selection.
 ---
 
 # Continuous Development
@@ -17,6 +17,7 @@ When invoked, load and follow all rule files in this directory before execution:
 6. `documentation.md`
 7. `git.md`
 8. `quota-safety.md`
+9. `subagents.md`
 
 Treat these files as one combined skill specification.
 
@@ -30,6 +31,26 @@ Before starting work:
 - do not skip a rule file merely because the task appears simple;
 - do not treat the child `.md` files as independent skills;
 - this `SKILL.md` is the only entry point.
+
+## Command routing takes precedence
+
+Read all rule files relative to this SKILL.md, then classify the invocation
+before starting repository development or causing side effects.
+
+Follow `subagents.md` when a Sub-agent selector is present. It governs
+agent selection, parameter validation, and interactive confirmation;
+`orchestration.md` governs task scheduling within the resolved selection.
+
+Help and status are read-only. A pending, cancelled, empty, invalid, or
+unavailable Sub-agent selection must not fall through to the development
+loop, commit/push operations, or automation creation.
+
+Apply the generic Main behavior below only after an execution command
+has been recognized, its selection is resolved, and the user's current
+constraints permit execution.
+
+Current explicit user restrictions take precedence. Selecting agents does
+not grant new permissions or override a no-edit/no-commit/no-push request.
 
 ## Main behavior
 

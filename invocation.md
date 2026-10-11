@@ -17,6 +17,30 @@ Behavior:
 - do not modify project source code, documentation, Git state, or automations;
 - return immediately after displaying the reference information.
 
+### Sub-agent selection
+
+Follow `subagents.md` for the complete selection grammar and safeguards.
+
+Supported forms after the continuous-development skill invocation:
+
+- `Sub-agent` or `Sub-agent()` — select all currently callable agents.
+- `Sub-agent(name)` — select one agent by its actual callable name.
+- `Sub-agent(a,b,c)` — select multiple agents.
+- `Sub-agent([a,b,c])` — equivalent list form.
+- `Sub-agent a,b,c` — equivalent comma-separated form.
+- `Sub-agent .` or `Sub-agent(.)` — request interactive selection first.
+
+Names in examples are placeholders, not built-in agents.
+Use ` -- ` before an additional task objective when this selector is used.
+
+Sub-agent alone starts the current-session continuous workflow without
+changing automations. To combine it with an existing execution mode, put
+that mode first: `always() Sub-agent(a,b)` or `run(2h) Sub-agent(a,b)`.
+
+Parse and validate the selection before development or automation changes.
+Never interpret invalid input, cancellation, or an unanswered picker as all.
+Do not claim that Markdown itself installs an input popup or a native command.
+
 ### Default
 
 `$continuous-development`
@@ -150,6 +174,19 @@ Inspect only:
 Do not modify source, documentation, Git state, or automations.
 
 ## Command parsing
+
+For invocations containing Sub-agent, resolve command routing and selection
+according to `subagents.md` before applying the default development behavior.
+
+`help Sub-agent`, `h Sub-agent`, and `help() Sub-agent` show selection help.
+`status() Sub-agent` inspects available and selected agents without spawning.
+`stop() Sub-agent(...)` is unsupported; stop() retains its automation meaning.
+
+For execution modes, use the order:
+[always() or run(...), optional] Sub-agent [selection, optional] [ -- objective]
+
+When help/h lists commands, include Sub-agent forms, example names, the
+all-versus-concurrency distinction, and the conditional picker behavior.
 
 `$continuous-development help` / `$continuous-development h` / `@continuous-development help` / `@continuous-development h`
 - command = help

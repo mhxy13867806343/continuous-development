@@ -1,5 +1,23 @@
 # Continuous Orchestration and Subagents
 
+## Selected-agent boundary
+
+When a Sub-agent selector is present, follow `subagents.md` and resolve
+selection before task dispatch. Waiting for the user's explicit selection
+is a valid pause even in always() mode.
+
+Use only the resolved callable agent names. Do not add unselected agents,
+substitute a generic agent for an invalid name, or bypass the selection
+through nested delegation. The main agent remains the coordinator.
+
+All selected agents must have an accounted-for state. Selection is not
+concurrency: queue suitable tasks when the safe/runtime concurrency cap
+is lower than the number of selected agents. Do not truncate the selection
+or invent tasks to force every selected agent to run.
+
+The existing dynamic-workstream and validation rules continue to apply.
+Only the main agent integrates Git changes; preserve current user restrictions.
+
 ## Dynamic workstreams
 
 Do not use fixed roles.

@@ -41,6 +41,7 @@ continuous-development/
 ├── documentation.md
 ├── git.md
 ├── quota-safety.md
+├── subagents.md
 ├── README.md
 └── LICENSE
 ```
@@ -172,6 +173,52 @@ $continuous-development stop()
 ```
 
 只关闭当前仓库对应的持续开发自动任务，不删除 Skill。
+
+### 指定子代理：Sub-agent
+
+`Sub-agent` 是本 Skill 的提示词约定，使用当前环境实际可调用的代理名称，
+不创建同名代理，也不把 `.md` 文件当成代理。
+
+```text
+@continuous-development Sub-agent
+@continuous-development Sub-agent(a)
+@continuous-development Sub-agent(a,b,c)
+@continuous-development Sub-agent([a,b,c])
+@continuous-development Sub-agent a,b,c
+@continuous-development Sub-agent .
+```
+
+不传名称表示全部可用子代理进入选择集合；并不表示全部同时启动。
+指定名称时只在所选名单内分配任务，超出安全并发数的任务排队执行。
+`a/b/c` 是示例，使用前换成实际名称。
+
+带目标：
+
+```text
+@continuous-development Sub-agent(a,b) -- 优先修复测试失败
+```
+
+与原有模式组合：
+
+```text
+@continuous-development always() Sub-agent(a,b) -- 继续当前项目
+@continuous-development run(2h) Sub-agent([a,b]) -- 继续现有 backlog
+```
+
+查看可用名单：
+
+```text
+@continuous-development status() Sub-agent
+```
+
+在使用 `$` 提及 Skill 的界面，将前缀换为 `$continuous-development`。
+
+`Sub-agent .` 在发送后请求选择：有可用交互工具时使用宿主支持的选择界面，
+否则显示编号列表，等待回复 `1,3`、实际名称、`全部` 或 `取消`。
+选择未确认前不改代码、不提交、不创建定时任务。
+
+仅导入 Markdown 不能使输入框在键入 `.` 时立即弹窗；这种输入补全需要宿主支持。
+详见 [子代理选择规则](./subagents.md)。
 
 ## 全局 Codex 指令
 
