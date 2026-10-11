@@ -85,6 +85,28 @@ git -C ~/.codex/skills/continuous-development status
 
 ## 使用
 
+### 查看帮助与命令指南 (help / h)
+
+```text
+$continuous-development help
+$continuous-development h
+$continuous-development help()
+@continuous-development help
+@continuous-development h
+```
+
+查看所有支持的命令列表、详细说明及使用示例（不修改任何代码或配置）：
+
+| 命令形式 | 模式 | 说明 |
+| :--- | :--- | :--- |
+| `@continuous-development help` / `h` | 帮助查询 | 打印完整命令手册与复制即用示例 |
+| `@continuous-development` | 默认单次模式 | 立即开始持续开发，不改动自动化任务 |
+| `@continuous-development always()` | 持续循环模式 | 任务连贯推进，不主动停止；附带每小时自动恢复机制 |
+| `@continuous-development run()` | 默认定时模式 | 立即开始并开启每 1 小时定时续作任务 |
+| `@continuous-development run(2h)` | 指定间隔模式 | 支持 1h/2h/3h/4h/6h/12h/24h，可附加任务目标 |
+| `@continuous-development status()` | 状态查看 | 只读检查当前项目架构、Git、Backlog 及定时任务 |
+| `@continuous-development stop()` | 停止定时 | 禁用当前项目的定时续作任务，不改动代码 |
+
 ### 普通持续开发
 
 ```text

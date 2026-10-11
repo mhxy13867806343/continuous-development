@@ -2,6 +2,21 @@
 
 ## Supported commands
 
+### help / h
+
+`$continuous-development help`
+`$continuous-development h`
+`$continuous-development help()`
+`@continuous-development help`
+`@continuous-development h`
+
+Behavior:
+
+- output a complete list of all supported commands;
+- provide clear descriptions, parameter options, and practical copy-paste examples for each mode;
+- do not modify project source code, documentation, Git state, or automations;
+- return immediately after displaying the reference information.
+
 ### Default
 
 `$continuous-development`
@@ -135,6 +150,10 @@ Inspect only:
 Do not modify source, documentation, Git state, or automations.
 
 ## Command parsing
+
+`$continuous-development help` / `$continuous-development h` / `@continuous-development help` / `@continuous-development h`
+- command = help
+- behavior = print full command list, descriptions, and examples; no changes made
 
 `$continuous-development always()`
 - command = always

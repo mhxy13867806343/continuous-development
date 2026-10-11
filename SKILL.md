@@ -1,6 +1,6 @@
 ---
 name: continuous-development
-description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, and always-on continuation modes.
+description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes.
 ---
 
 # Continuous Development
