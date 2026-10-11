@@ -17,6 +17,20 @@ Behavior:
 - do not modify project source code, documentation, Git state, or automations;
 - return immediately after displaying the reference information.
 
+### help Sub-agent / h Sub-agent
+
+`$continuous-development help Sub-agent`
+`$continuous-development h Sub-agent`
+`$continuous-development help() Sub-agent`
+`@continuous-development help Sub-agent`
+`@continuous-development h Sub-agent`
+
+Behavior:
+
+- output only the Sub-agent selection grammar, parameter options, interactive rules, and concrete examples;
+- do not start continuous development, modify source files, or touch automations;
+- serve as the primary safe read-only smoke-test command to verify Sub-agent rule integration without executing development work.
+
 ### Sub-agent selection
 
 Follow `subagents.md` for the complete selection grammar and safeguards.

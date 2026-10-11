@@ -220,6 +220,42 @@ $continuous-development stop()
 仅导入 Markdown 不能使输入框在键入 `.` 时立即弹窗；这种输入补全需要宿主支持。
 详见 [子代理选择规则](./subagents.md)。
 
+#### 接入验证与安全测试命令
+
+在安装或更新后，建议在新对话中先执行只读帮助命令进行冒烟测试：
+
+```text
+@continuous-development help Sub-agent
+```
+
+- **预期行为**：仅展示子代理选择的语法、规则与示例，**绝不启动持续开发**、不扫描或修改代码、不创建定时任务。
+- **注意**：能够输出帮助信息代表文档接入成功，但不代表原生环境的输入框弹窗或多代理并发已经通过实操验证。
+
+#### 新环境自动接入提示词模版
+
+若在其它电脑或全新环境下放置了新增规则文件，可直接复制以下提示词发送给 Codex，指导其自动完成安全局部接入：
+
+> 请帮我接入 continuous-development 的子代理选择功能。  
+> Skill 目录：`~/.codex/skills/continuous-development/`  
+> 我已经把以下两个文件放进这个目录：  
+> - `subagents.md`  
+> - `SUBAGENTS-INTEGRATION.md`  
+> 请先读取 `SUBAGENTS-INTEGRATION.md` 和 `subagents.md`，再检查当前目录里的现有文件。  
+> 先备份需要修改的文件，备份放到 Skill 目录之外，然后按照接入说明，仅局部更新：  
+> - `SKILL.md`  
+> - `invocation.md`  
+> - `orchestration.md`  
+> - `README.md`  
+> 要求：  
+> 1. 保留现有功能和我的其他修改，不用旧版本整份覆盖。  
+> 2. 在 `SKILL.md` 中接入 `subagents.md`。  
+> 3. 增加 Sub-agent 的命令说明、参数解析和帮助内容。  
+> 4. 先解析命令、确认子代理选择，再进入开发循环。  
+> 5. `Sub-agent .` 必须等待用户选择；取消或无效输入不能默认全选。  
+> 6. 没有真实选择界面能力时，使用对话编号列表，不声称已实现弹窗。  
+> 7. 不把 `SUBAGENTS-INTEGRATION.md` 加入运行时规则加载列表。  
+> 本次只做 Skill 文档接入，不启动持续开发，不执行 git commit/push。完成后告诉我修改了哪些内容及尚未实测的功能。
+
 ## 全局 Codex 指令
 
 建议同时在 Codex / Codex++ 的全局“Codex 指令”中保存通用规则，例如：

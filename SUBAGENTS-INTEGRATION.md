@@ -251,24 +251,55 @@ Only the main agent integrates Git changes; preserve current user restrictions.
 | 31 | 新规则文件存在但入口未引用 | 应识别接入未完成，不能只凭文件存在判定功能生效 |
 | 32 | 只是输入框内键入 `.`、尚未发送 | 无客户端扩展时不要求出现原生弹窗 |
 
-## 九、给 Codex 的接入任务文本
+## 九、给 Codex 的接入任务文本与验证步骤
 
-将两个文档放到本地仓库后，可在该仓库的 Codex 会话粘贴：
+### 9.1 快速接入提示词（可直接复制给 Codex）
+
+在 Codex 的普通对话里直接发送：
 
 ```text
-请按 SUBAGENTS-INTEGRATION.md 为当前 continuous-development Skill 接入
-subagents.md 中的 Sub-agent 命令规则。
-
-只局部更新 SKILL.md、invocation.md、orchestration.md、README.md，
-保留现有 help/h、always()、run()、status()、stop() 与技术栈动态识别。
-先解析管理/选择命令，再进入开发循环；不能让默认立即执行规则覆盖选择等待。
-
-a/b/c 是示例，不要创建同名代理配置。交互工具缺失时使用编号列表；
-不要声称 Markdown 已实现输入框自动弹窗。
-
-只修改本地文档，不 commit，不 push，不创建 PR，不创建/修改定时任务，
-不修改模型或代理配置。静态核对示例与规则，列出尚未实机验证的项目。
+请帮我接入 continuous-development 的子代理选择功能。
+Skill 目录：
+~/.codex/skills/continuous-development/
+我已经把以下两个文件放进这个目录：
+- subagents.md
+- SUBAGENTS-INTEGRATION.md
+请先读取 SUBAGENTS-INTEGRATION.md 和 subagents.md，
+再检查当前目录里的现有文件。
+先备份需要修改的文件，备份放到 Skill 目录之外，
+然后按照接入说明，仅局部更新：
+- SKILL.md
+- invocation.md
+- orchestration.md
+- README.md
+要求：
+1. 保留现有功能和我的其他修改，不用旧版本整份覆盖。
+2. 在 SKILL.md 中接入 subagents.md。
+3. 增加 Sub-agent 的命令说明、参数解析和帮助内容。
+4. 先解析命令、确认子代理选择，再进入开发循环。
+5. Sub-agent . 必须等待用户选择；取消或无效输入不能默认全选。
+6. 没有真实选择界面能力时，使用对话编号列表，不声称已实现弹窗。
+7. 不把 SUBAGENTS-INTEGRATION.md 加入运行时规则加载列表。
+本次只做 Skill 文档接入：
+- 不启动当前项目的持续开发
+- 不启动子代理
+- 不创建或修改定时任务
+- 不修改模型和代理配置
+- 不执行 git commit、push 或创建 PR
+完成后检查文件引用、命令示例和规则是否一致，
+告诉我修改了哪些内容，以及哪些功能尚未实测。
 ```
+
+### 9.2 接入后第一步：安全只读冒烟测试
+
+接入后在新对话里执行：
+
+```text
+@continuous-development help Sub-agent
+```
+
+- **预期行为**：仅打印 Sub-agent 选择语法与使用示例，不启动开发循环，不扫描修改代码，不创建定时任务。
+- **边界说明**：展示帮助代表规则与解析接入成功，仍不代表原生输入框弹窗或子代理多进程并发已经实测完成。
 
 ## 十、验证声明
 
