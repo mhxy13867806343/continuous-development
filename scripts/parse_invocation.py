@@ -19,6 +19,7 @@ import sys
 
 # lifecycle-extension-v1: safe management routing
 from lifecycle_policy import parse_lifecycle
+from watch_policy import parse_watch
 
 
 class InvocationParser:
@@ -37,6 +38,11 @@ class InvocationParser:
         }
 
     def parse(self, raw_input: str) -> dict:
+        # watch-extension-v1: management methods never fall through to development.
+        watch = parse_watch(raw_input)
+        if watch is not None:
+            return watch
+
         # lifecycle-extension-v1: route before legacy h/help regex
         lifecycle = parse_lifecycle(raw_input)
         if lifecycle is not None:

@@ -1,182 +1,290 @@
 {
-  "package": "continuous-development",
-  "delivery": "complete-preintegrated-directory",
-  "base_repository": "mhxy13867806343/continuous-development",
-  "base_commit": "51227dd8ce4a20f3ec7dd71c7ed3d64f0e0a26bf",
-  "extension": "session-extension-v1",
-  "archive_root": "continuous-development/",
-  "contains_git_history": false,
-  "host_actions_executed": false,
+  "package": "continuous-development-watch-complete",
+  "scope": "integrated skill plus limited macOS/Codex watch runtime",
+  "tests": {
+    "entry_rule_references": [
+      "invocation.md",
+      "repository.md",
+      "orchestration.md",
+      "validation.md",
+      "typesafe.md",
+      "documentation.md",
+      "git.md",
+      "quota-safety.md",
+      "subagents.md",
+      "watch.md",
+      "session-lifecycle.md",
+      "handoff.md",
+      "progress.md",
+      "sync-quota.md",
+      "host-adapters.md"
+    ],
+    "all_references_exist": true,
+    "python_syntax": "passed",
+    "test_count": 124,
+    "test_result": "passed",
+    "test_scope": "unit tests plus simulated stdio App Server subprocesses and temporary local Git repositories",
+    "native_macos_launchd_tested": false,
+    "real_codex_account_tested": false,
+    "user_machine_installed": false,
+    "remote_repositories_modified": false,
+    "base_zip_sha256": "05cc5aa689595cb78113760cb5efa834c0188c42d0509ce9435d206aa0dddbc9"
+  },
   "files": [
     {
       "path": ".gitignore",
-      "bytes": 16,
+      "size": 16,
       "sha256": "4fd2531abcdd20c5e5dc5cd1ecba8f9c131bb1d0da2b0c4823c31580c7cc3d0d"
     },
     {
       "path": "IMPLEMENTATION-STATUS.md",
-      "bytes": 1447,
-      "sha256": "54e8e2eead2da5ba1d25bfd3e4cac044f3e9793e1b12e3d0a1a410bf86eb53c6"
+      "size": 2161,
+      "sha256": "d922412423f6a6448dab0e6d22299905fb4a3d33b396fca847e32e0dfc6c7cfb"
     },
     {
       "path": "LICENSE",
-      "bytes": 1092,
+      "size": 1092,
       "sha256": "b621b0c50c03016efd1879024d80758390e24c0bc843889c223fd0082efda0c3"
     },
     {
       "path": "README-SESSION-MANAGEMENT.md",
-      "bytes": 9021,
+      "size": 9021,
       "sha256": "4890e4ac86678dc6fb6761a46e6f502ab9c841a8ea1c93d3c44f8735a8d438ad"
     },
     {
+      "path": "README-WATCH.md",
+      "size": 6006,
+      "sha256": "01379729fc5c7d3d86dc678d736e02069a55aca9a7e91012c574036bdb221a26"
+    },
+    {
       "path": "README-安装说明.md",
-      "bytes": 4363,
-      "sha256": "990b1e912ee9e0014f63d69de8c1499d3a35714404e85b2116eca4f139fe1670"
+      "size": 4959,
+      "sha256": "ed7cdba2eafe13959a21240be657c9ebde5cbd88222af98928a02ae21552d88a"
     },
     {
       "path": "README.md",
-      "bytes": 14231,
-      "sha256": "258db4fb422c05e99191a2e6b79221e17a75751f5d7f67b66988593524160e52"
+      "size": 14696,
+      "sha256": "3488e42e785809b6e58e2b31ddf51c121f0fee0150b54968a6ae8dc0cf4c592b"
     },
     {
       "path": "SESSION-INTEGRATION.md",
-      "bytes": 12162,
+      "size": 12162,
       "sha256": "c6f96b05d9424db092c987badb6dffebc619e3927bbeec625ea37345e360400a"
     },
     {
       "path": "SKILL.md",
-      "bytes": 4814,
-      "sha256": "93e04286dc2f61704d5e37f8e223619cdb5cef48d8c7b78944579f31a2bad80f"
+      "size": 5429,
+      "sha256": "9e4defcc03b115a4324b425eb4d1825fe30e432d259f1d6d5e42b46e63565303"
     },
     {
       "path": "SUBAGENTS-INTEGRATION.md",
-      "bytes": 14987,
+      "size": 14987,
       "sha256": "1b25d5904db10ea3dfcb45b30c89c2e9e87793a15793e68bee9cfa0c1bd2cf38"
     },
     {
-      "path": "docs/PACKAGE-CHECKS.json",
-      "bytes": 3971,
+      "path": "docs/PACKAGE-CHECKS-BASELINE.json",
+      "size": 3971,
       "sha256": "d646ccca95cde7e5397b1cba97f1b1458e4f02823e7424e89f1664581d1ce9c9"
     },
     {
       "path": "docs/SOURCE-VERIFICATION.json",
-      "bytes": 3037,
+      "size": 3037,
       "sha256": "6aaa3ab2cf7448c8dd734349a875956cad401d6a66aac40d94463fb837e9c690"
     },
     {
       "path": "docs/SOURCES.md",
-      "bytes": 2994,
+      "size": 2994,
       "sha256": "037b499f6431d7f2e1248c856cc4ac65de64f5dc0c14d3ad389b505d1dd4f2ac"
     },
     {
-      "path": "docs/TEST-RESULTS.txt",
-      "bytes": 6482,
+      "path": "docs/TEST-RESULTS-BASELINE.txt",
+      "size": 6482,
       "sha256": "9c090525e86c6932fff43ffe1bbd5b37b304f8b74c91a126b86145bb465713ef"
     },
     {
+      "path": "docs/TEST-RESULTS-WATCH.txt",
+      "size": 11587,
+      "sha256": "fb356990b30f869b8519753316856d2889e6b7ed5760c0b678b83b8ea3d3c281"
+    },
+    {
+      "path": "docs/TEST-RESULTS.txt",
+      "size": 11587,
+      "sha256": "fb356990b30f869b8519753316856d2889e6b7ed5760c0b678b83b8ea3d3c281"
+    },
+    {
+      "path": "docs/WATCH-DESIGN.md",
+      "size": 2626,
+      "sha256": "5748aa5fed5c4c5366f34bbb9a58abd4d30e16bb0ab351fcc3a8043edee19d6c"
+    },
+    {
+      "path": "docs/WATCH-PACKAGE-CHECKS.json",
+      "size": 813,
+      "sha256": "c1701a21e5beaf570bd85d018f7aa146f3cf6e43a2fa96e708bdea966bfcb27d"
+    },
+    {
+      "path": "docs/WATCH-PARSER-RED2.txt",
+      "size": 4290,
+      "sha256": "96a2d54a2ce1498ab8edee0af1e85d41e7a877fe74d257b66398e6ca2f7be6fb"
+    },
+    {
+      "path": "docs/WATCH-RED.txt",
+      "size": 1006,
+      "sha256": "b60ade2c23d9afab1bf95158802b398880ebbf2897e5f0cff03cab9264c6dba0"
+    },
+    {
+      "path": "docs/WATCH-RPC-RED.txt",
+      "size": 987,
+      "sha256": "e5b969fe90a8d23fc02262fef36ad93995642acfd5d210df8bfd4c12719a6756"
+    },
+    {
+      "path": "docs/WATCH-RUNTIME-RED.txt",
+      "size": 942,
+      "sha256": "5c1be835dae42d8fa0a434ed75196ea089d9bdc44dfb39ef3fcca4f85d474f34"
+    },
+    {
       "path": "documentation.md",
-      "bytes": 1491,
+      "size": 1491,
       "sha256": "51abb9e13eb264d1eec6c79136612273869a2d5684de9ebea373862fdf7b230a"
     },
     {
       "path": "git.md",
-      "bytes": 2080,
-      "sha256": "ca3401f324c9fd86aab79eb777750f50838f936e5047665bceb58c6d45817f46"
+      "size": 2400,
+      "sha256": "ed649e73aabc75fa6062e67bab8bfe88fec0b15cd578ee1132f542568d5aca7c"
     },
     {
       "path": "handoff.md",
-      "bytes": 2910,
+      "size": 2910,
       "sha256": "2113c6e4f52a36e0dee6b4babe91f1ab7e74018835c579445c3e3e009f6932a2"
     },
     {
       "path": "host-adapters.md",
-      "bytes": 3834,
-      "sha256": "7beacc00022885bcebace936227a687191ca43c8c0d543f44a24a93f894540c5"
+      "size": 4212,
+      "sha256": "a3db6c4e439dcf23bd992fd8100760935e693cf81dbf4b3c9f7c797f1929d28f"
     },
     {
       "path": "install_extension.py",
-      "bytes": 13888,
+      "size": 13888,
       "sha256": "c599bb99e98bfdfa0b47ea1b407067285cd8b0cb877d0a7cf42513cfcb38cd97"
     },
     {
       "path": "invocation.md",
-      "bytes": 11912,
-      "sha256": "b83e3b9a721dc6b0ddfc92161a2062e855b7fe1be6bcdf692a76f9886961583a"
+      "size": 12414,
+      "sha256": "29382d59079fe5ab194a3b4c0b37058697bdd21b08c87871339a33c95d7b250c"
     },
     {
       "path": "lifecycle.defaults.json",
-      "bytes": 1146,
+      "size": 1146,
       "sha256": "61081c28a8113aeb88a9dd70e4c410f24cc333a9d09b91952a8f2fb563206a43"
     },
     {
       "path": "orchestration.md",
-      "bytes": 4341,
-      "sha256": "4b75fd9269ca8e9bc46148942e1bed87e39ed6a3d359e827fa2fd0ca861734ba"
+      "size": 4661,
+      "sha256": "69ec04db83999945c29c4b9136c6ef76be463ac972a627b2ed13f11685496401"
     },
     {
       "path": "progress.md",
-      "bytes": 2424,
+      "size": 2424,
       "sha256": "cb25372ce3a27eec150557515e22fca38658e144ee3cd298efe5c0bd74e87d7c"
     },
     {
       "path": "quota-safety.md",
-      "bytes": 2317,
-      "sha256": "ccfeb0cfe65afa9bab9907633e1a97fdc0d69d2f060f60cfe730778aadae480f"
+      "size": 2637,
+      "sha256": "ab512c94ce24244dfb27b0131fadb4cbd03e67c4c47b54d0b7b44f475819c02c"
     },
     {
       "path": "repository.md",
-      "bytes": 2445,
+      "size": 2445,
       "sha256": "1c7a584737b5ec2db239b941dc09aa1e2182c7babbeb41ba08a6151e3c8eddcc"
     },
     {
       "path": "scripts/lifecycle_policy.py",
-      "bytes": 12380,
+      "size": 12380,
       "sha256": "3932c606ea0c3350b96f78538d0f974e1ffa7f66b3e5f7c8e8ac14468d8beebd"
     },
     {
       "path": "scripts/parse_invocation.py",
-      "bytes": 8792,
-      "sha256": "a12d18d08bcfa05393d2006f961cd30f1cbecb0b834b28e659c4cdf4f29da443"
+      "size": 9008,
+      "sha256": "1cbd15c1960f37b99bc1b0db1ddf8eaf65edb9b73c61fc84f9849ac49898e8d0"
+    },
+    {
+      "path": "scripts/watch_policy.py",
+      "size": 7120,
+      "sha256": "8ad62cd088df761469544d7b6000111b06dd39adb610ef1e9ffc4935319586d5"
+    },
+    {
+      "path": "scripts/watch_rpc.py",
+      "size": 10989,
+      "sha256": "d235a4bd0b7c68c0d20fa07a4633cde0ebaaa665add0c4ddfab5160d3abfe7e9"
+    },
+    {
+      "path": "scripts/watch_runtime.py",
+      "size": 20693,
+      "sha256": "366d01489aba04012171b1a19c54a079d8cb29b09c523f5db03ca359fee217ae"
     },
     {
       "path": "session-lifecycle.md",
-      "bytes": 7215,
+      "size": 7215,
       "sha256": "5955e0894f2a4816aff38e0d671710bd17efc0b6e21ed2575145096f45c27eee"
     },
     {
       "path": "subagents.md",
-      "bytes": 15651,
+      "size": 15651,
       "sha256": "70ddea8f6023cce42bc2462f0199bac04878e69d3a0260cb0a7d3aef1c1b31c8"
     },
     {
       "path": "sync-quota.md",
-      "bytes": 6391,
+      "size": 6391,
       "sha256": "9b8cbde2672afd9054def58f608683453344d3051475491bf4678ab919a6d8fa"
     },
     {
       "path": "templates/SESSION-HANDOFF.md",
-      "bytes": 1384,
+      "size": 1384,
       "sha256": "277b24e54ae5948995a61eeb524cee0c8093e9217fda69053baae8f131360980"
     },
     {
+      "path": "tests/fixtures/fake_app_server.py",
+      "size": 2967,
+      "sha256": "58b0c171f4061b85e356aa17404dfebcd84ce591af72a51091f6ef21e7da4429"
+    },
+    {
       "path": "tests/test_install_extension.py",
-      "bytes": 4843,
+      "size": 4843,
       "sha256": "2c53685632aa76f9de8790e2f8302d441fb130992c97280bede8d6edb5e431b0"
     },
     {
       "path": "tests/test_lifecycle_policy.py",
-      "bytes": 9459,
+      "size": 9459,
       "sha256": "ca3aa1f78b3e7ccaf1cc4541bf8e1f57e280e6e96d7032d17970e064a26ccdc6"
     },
     {
+      "path": "tests/test_watch_policy.py",
+      "size": 4864,
+      "sha256": "f3731840287fd0f5c08dd2d39576a2b9b4e20576b7d5f919ae5052fad4968480"
+    },
+    {
+      "path": "tests/test_watch_rpc.py",
+      "size": 3146,
+      "sha256": "f11fcdee0218abea70d3bb85ed08a7866d674cf1c71a4c06a1b322cc58f5d4a6"
+    },
+    {
+      "path": "tests/test_watch_runtime.py",
+      "size": 7573,
+      "sha256": "88567f3619fd5c58108d72d18998568bc9daa4645b39bb0ac06c7cdb63e3bfbd"
+    },
+    {
       "path": "typesafe.md",
-      "bytes": 597,
+      "size": 597,
       "sha256": "bda17101437389f5883b56fe9dab1ac7166bb68e6d7e8032e8b9ef309839740f"
     },
     {
       "path": "validation.md",
-      "bytes": 1532,
+      "size": 1532,
       "sha256": "1aaa0d501d50143c9027f2bc14827eef9d740cbd6043858ccc955ec820d77e11"
+    },
+    {
+      "path": "watch.md",
+      "size": 6243,
+      "sha256": "4561aad775e500d6377ca4c846039bf8dea613d134103aaf56cbfbb04e9a53ba"
     }
   ]
 }

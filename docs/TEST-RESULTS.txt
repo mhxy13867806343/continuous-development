@@ -62,8 +62,68 @@ test_round_fifteen_not_task_done (test_lifecycle_policy.PolicyTests.test_round_f
 test_ten_archived_allows_ten (test_lifecycle_policy.PolicyTests.test_ten_archived_allows_ten) ... ok
 test_twenty_existing_no_new (test_lifecycle_policy.PolicyTests.test_twenty_existing_no_new) ... ok
 test_unknown_count (test_lifecycle_policy.PolicyTests.test_unknown_count) ... ok
+test_boundary (test_watch_policy.QuotaTests.test_boundary) ... ok
+test_multi_bucket (test_watch_policy.QuotaTests.test_multi_bucket) ... ok
+test_multiple (test_watch_policy.QuotaTests.test_multiple) ... ok
+test_normal (test_watch_policy.QuotaTests.test_normal) ... ok
+test_reached (test_watch_policy.QuotaTests.test_reached) ... ok
+test_reset_not_assumed (test_watch_policy.QuotaTests.test_reset_not_assumed) ... ok
+test_unknown (test_watch_policy.QuotaTests.test_unknown) ... ok
+test_backoff (test_watch_policy.RecoveryTests.test_backoff) ... ok
+test_invalid_report (test_watch_policy.RecoveryTests.test_invalid_report) ... ok
+test_limit (test_watch_policy.RecoveryTests.test_limit) ... ok
+test_network (test_watch_policy.RecoveryTests.test_network) ... ok
+test_no_text_matching_for_quota (test_watch_policy.RecoveryTests.test_no_text_matching_for_quota) ... ok
+test_report (test_watch_policy.RecoveryTests.test_report) ... ok
+test_unknown_errors_pause (test_watch_policy.RecoveryTests.test_unknown_errors_pause) ... ok
+test_actions (test_watch_policy.WatchParserTests.test_actions) ... ok
+test_default (test_watch_policy.WatchParserTests.test_default) ... ok
+test_h_never_steals_threshold (test_watch_policy.WatchParserTests.test_h_never_steals_threshold) ... ok
+test_help (test_watch_policy.WatchParserTests.test_help) ... ok
+test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) ... ok
+test_not_ours (test_watch_policy.WatchParserTests.test_not_ours) ... ok
+test_parameters (test_watch_policy.WatchParserTests.test_parameters) ... ok
+test_reject_bad (test_watch_policy.WatchParserTests.test_reject_bad) ... ok
+test_subseconds_not_allowed (test_watch_policy.WatchParserTests.test_subseconds_not_allowed) ... ok
+test_watch_inside_quoted_text_is_not_a_call (test_watch_policy.WatchParserTests.test_watch_inside_quoted_text_is_not_a_call) ... ok
+test_approval_never_granted (test_watch_rpc.ProtocolTests.test_approval_never_granted) ... ok
+test_continue (test_watch_rpc.ProtocolTests.test_continue) ... ok
+test_disconnect_is_ambiguous (test_watch_rpc.ProtocolTests.test_disconnect_is_ambiguous) ... ok
+test_foreign_thread_ignored (test_watch_rpc.ProtocolTests.test_foreign_thread_ignored) ... ok
+test_handshake (test_watch_rpc.ProtocolTests.test_handshake) ... ok
+test_invalid_report_pauses (test_watch_rpc.ProtocolTests.test_invalid_report_pauses) ... ok
+test_no_apikey_fallback (test_watch_rpc.ProtocolTests.test_no_apikey_fallback) ... ok
+test_quota (test_watch_rpc.ProtocolTests.test_quota) ... ok
+test_quota_midturn_interrupt (test_watch_rpc.ProtocolTests.test_quota_midturn_interrupt) ... ok
+test_resume_exact_thread (test_watch_rpc.ProtocolTests.test_resume_exact_thread) ... ok
+test_stop_during_turn (test_watch_rpc.ProtocolTests.test_stop_during_turn) ... ok
+test_thread_and_report (test_watch_rpc.ProtocolTests.test_thread_and_report) ... ok
+test_transient_terminal_failure (test_watch_rpc.ProtocolTests.test_transient_terminal_failure) ... ok
+test_user_interruption_pauses (test_watch_rpc.ProtocolTests.test_user_interruption_pauses) ... ok
+test_help_without_repo (test_watch_runtime.DispatchTests.test_help_without_repo) ... ok
+test_no_reserved_chain (test_watch_runtime.DispatchTests.test_no_reserved_chain) ... ok
+test_preview_no_writes (test_watch_runtime.DispatchTests.test_preview_no_writes) ... ok
+test_recursive_enable_blocked (test_watch_runtime.DispatchTests.test_recursive_enable_blocked) ... ok
+test_status_without_install_no_writes (test_watch_runtime.DispatchTests.test_status_without_install_no_writes) ... ok
+test_unsupported_platform_fail_closed (test_watch_runtime.DispatchTests.test_unsupported_platform_fail_closed) ... ok
+test_active_snapshot_not_restarted (test_watch_runtime.RuntimeTests.test_active_snapshot_not_restarted) ... ok
+test_atomic_private_file (test_watch_runtime.RuntimeTests.test_atomic_private_file) ... ok
+test_dirty_repo_refused (test_watch_runtime.RuntimeTests.test_dirty_repo_refused) ... ok
+test_done (test_watch_runtime.RuntimeTests.test_done) ... ok
+test_interrupted_pauses (test_watch_runtime.RuntimeTests.test_interrupted_pauses) ... ok
+test_invalid_report_pauses (test_watch_runtime.RuntimeTests.test_invalid_report_pauses) ... ok
+test_job_identity (test_watch_runtime.RuntimeTests.test_job_identity) ... ok
+test_lock (test_watch_runtime.RuntimeTests.test_lock) ... ok
+test_no_progress_guard (test_watch_runtime.RuntimeTests.test_no_progress_guard) ... ok
+test_plist (test_watch_runtime.RuntimeTests.test_plist) ... ok
+test_quota_no_model (test_watch_runtime.RuntimeTests.test_quota_no_model) ... ok
+test_retry_cap (test_watch_runtime.RuntimeTests.test_retry_cap) ... ok
+test_stopped_no_restart (test_watch_runtime.RuntimeTests.test_stopped_no_restart) ... ok
+test_terminal_state_not_reopened (test_watch_runtime.RuntimeTests.test_terminal_state_not_reopened) ... ok
+test_unknown_disconnect_no_blind_retry (test_watch_runtime.RuntimeTests.test_unknown_disconnect_no_blind_retry) ... ok
+test_worktree_source_preserved (test_watch_runtime.RuntimeTests.test_worktree_source_preserved) ... ok
 
 ----------------------------------------------------------------------
-Ran 64 tests in 3.696s
+Ran 124 tests in 14.166s
 
 OK

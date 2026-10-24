@@ -1,0 +1,21 @@
+test_watch_rpc (unittest.loader._FailedTest.test_watch_rpc) ... ERROR
+
+======================================================================
+ERROR: test_watch_rpc (unittest.loader._FailedTest.test_watch_rpc)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_watch_rpc
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/mnt/data/watch-build/continuous-development/tests/test_watch_rpc.py", line 4, in <module>
+    from watch_rpc import JsonRpc, CodexAdapter, NeedUser, LostConnection, QuotaPause, TerminalFailure
+ModuleNotFoundError: No module named 'watch_rpc'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

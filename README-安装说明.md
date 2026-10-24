@@ -1,3 +1,15 @@
+# watch() 完整更新包
+
+本文件其余部分保留上一版安装说明。此次新增 watch.md、README-WATCH.md、
+scripts/watch_policy.py、watch_rpc.py、watch_runtime.py，并已接入 SKILL.md 和解析器。
+直接合并整个目录，保留 .git 与个人修改；不要运行旧的增量安装器。
+
+**watch() 有实际 macOS/Codex 后台执行脚本，但未在你的电脑安装或实测。**
+它使用独立工作树和专用线程；旧版 sessions/sync 等模块仍未接通完整执行器。
+使用方式、限制与测试范围见 [README-WATCH.md](README-WATCH.md)。
+
+---
+
 # 完整目录包：安装与使用
 
 这是已经合并的 continuous-development 完整目录，不是单独的增量扩展包。

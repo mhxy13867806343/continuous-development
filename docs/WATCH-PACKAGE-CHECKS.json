@@ -1,0 +1,29 @@
+{
+  "entry_rule_references": [
+    "invocation.md",
+    "repository.md",
+    "orchestration.md",
+    "validation.md",
+    "typesafe.md",
+    "documentation.md",
+    "git.md",
+    "quota-safety.md",
+    "subagents.md",
+    "watch.md",
+    "session-lifecycle.md",
+    "handoff.md",
+    "progress.md",
+    "sync-quota.md",
+    "host-adapters.md"
+  ],
+  "all_references_exist": true,
+  "python_syntax": "passed",
+  "test_count": 124,
+  "test_result": "passed",
+  "test_scope": "unit tests plus simulated stdio App Server subprocesses and temporary local Git repositories",
+  "native_macos_launchd_tested": false,
+  "real_codex_account_tested": false,
+  "user_machine_installed": false,
+  "remote_repositories_modified": false,
+  "base_zip_sha256": "05cc5aa689595cb78113760cb5efa834c0188c42d0509ce9435d206aa0dddbc9"
+}

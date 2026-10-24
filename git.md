@@ -1,3 +1,8 @@
+> watch() precedence: see `watch.md`. A managed watch worker performs one bounded
+> round in its own worktree, with no nested watcher/subagents or automatic commit/push.
+> Its lifecycle, quota and stop policy override the generic continuous-loop defaults
+> below. Other invocation modes retain their existing behavior.
+
 # Git Workflow and Remote Verification
 
 

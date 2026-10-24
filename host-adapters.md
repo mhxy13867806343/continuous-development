@@ -1,3 +1,11 @@
+# 新增有限的可执行适配器
+
+watch.md / scripts/watch_runtime.py 现在提供 macOS + 本地 Codex App Server 的执行器。
+该执行器只操作自己的线程/工作树；不实现本文件下列跨宿主会话管理契约的全部能力。
+CLI和LaunchAgent兼容性必须通过本机doctor/安装/状态回读确认。真实客户端端到端尚未实测。
+
+---
+
 # Host Adapters：跨客户端的能力边界
 
 本文件把“统一工作流”与“各软件能否真正执行”分开。`cc` 在这里按 Claude Code 解释。

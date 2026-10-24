@@ -1,5 +1,14 @@
 # Invocation and Automation Commands
 
+## watch() — real local background runner
+
+Follow `watch.md` for `watch()`, `watch(every="60s", retry=3, threshold=1)`,
+`watch("doctor")`, `watch("status")`, `watch("stop")`, and `watch("resume")`.
+These are standalone management calls; parse before the legacy development regex.
+The runner is macOS/Codex-specific, uses its own worktree/thread, and must return
+real service status. Do not infer GUI control or installation from a parsed call.
+Include these methods and limits when displaying help.
+
 ## Supported commands
 
 <!-- lifecycle-extension-v1: commands -->

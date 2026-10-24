@@ -1,0 +1,59 @@
+test_boundary (test_watch_policy.QuotaTests.test_boundary) ... ok
+test_multi_bucket (test_watch_policy.QuotaTests.test_multi_bucket) ... ok
+test_multiple (test_watch_policy.QuotaTests.test_multiple) ... ok
+test_normal (test_watch_policy.QuotaTests.test_normal) ... ok
+test_reached (test_watch_policy.QuotaTests.test_reached) ... ok
+test_reset_not_assumed (test_watch_policy.QuotaTests.test_reset_not_assumed) ... ok
+test_unknown (test_watch_policy.QuotaTests.test_unknown) ... ok
+test_backoff (test_watch_policy.RecoveryTests.test_backoff) ... ok
+test_invalid_report (test_watch_policy.RecoveryTests.test_invalid_report) ... ok
+test_limit (test_watch_policy.RecoveryTests.test_limit) ... ok
+test_network (test_watch_policy.RecoveryTests.test_network) ... ok
+test_no_text_matching_for_quota (test_watch_policy.RecoveryTests.test_no_text_matching_for_quota) ... ok
+test_report (test_watch_policy.RecoveryTests.test_report) ... ok
+test_unknown_errors_pause (test_watch_policy.RecoveryTests.test_unknown_errors_pause) ... ok
+test_actions (test_watch_policy.WatchParserTests.test_actions) ... ok
+test_default (test_watch_policy.WatchParserTests.test_default) ... ok
+test_h_never_steals_threshold (test_watch_policy.WatchParserTests.test_h_never_steals_threshold) ... ok
+test_help (test_watch_policy.WatchParserTests.test_help) ... ok
+test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) ... 
+  test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) (s='always() watch()') ... FAIL
+  test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) (s='always()+watch()') ... FAIL
+  test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) (s='lambda(watch())') ... FAIL
+test_not_ours (test_watch_policy.WatchParserTests.test_not_ours) ... ok
+test_parameters (test_watch_policy.WatchParserTests.test_parameters) ... ok
+test_reject_bad (test_watch_policy.WatchParserTests.test_reject_bad) ... ok
+test_subseconds_not_allowed (test_watch_policy.WatchParserTests.test_subseconds_not_allowed) ... ok
+test_watch_inside_quoted_text_is_not_a_call (test_watch_policy.WatchParserTests.test_watch_inside_quoted_text_is_not_a_call) ... ok
+
+======================================================================
+FAIL: test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) (s='always() watch()')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/watch-build/continuous-development/tests/test_watch_policy.py", line 25, in test_mixed_watch_must_not_fall_back
+    with self.subTest(s=s), self.assertRaises(ValueError): parse_watch(s)
+                            ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) (s='always()+watch()')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/watch-build/continuous-development/tests/test_watch_policy.py", line 25, in test_mixed_watch_must_not_fall_back
+    with self.subTest(s=s), self.assertRaises(ValueError): parse_watch(s)
+                            ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_mixed_watch_must_not_fall_back (test_watch_policy.WatchParserTests.test_mixed_watch_must_not_fall_back) (s='lambda(watch())')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/mnt/data/watch-build/continuous-development/tests/test_watch_policy.py", line 25, in test_mixed_watch_must_not_fall_back
+    with self.subTest(s=s), self.assertRaises(ValueError): parse_watch(s)
+                            ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.003s
+
+FAILED (failures=3)

@@ -1,6 +1,6 @@
 ---
 name: continuous-development
-description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes. Supports Sub-agent selection and session lifecycle, handoff, progress, and quota-aware sync rules.
+description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes. Supports Sub-agent selection, session lifecycle, handoff, progress, quota-aware sync, and background watch rules.
 ---
 
 # Continuous Development
@@ -18,11 +18,12 @@ When invoked, load and follow all rule files in this directory before execution:
 7. `git.md`
 8. `quota-safety.md`
 9. `subagents.md`
-10. `session-lifecycle.md`
-11. `handoff.md`
-12. `progress.md`
-13. `sync-quota.md`
-14. `host-adapters.md`
+10. `watch.md`
+11. `session-lifecycle.md`
+12. `handoff.md`
+13. `progress.md`
+14. `sync-quota.md`
+15. `host-adapters.md`
 
 Treat these files as one combined skill specification.
 
@@ -36,6 +37,16 @@ Before starting work:
 - do not skip a rule file merely because the task appears simple;
 - do not treat the child `.md` files as independent skills;
 - this `SKILL.md` is the only entry point.
+
+## watch() management routing (takes precedence)
+
+When the invocation contains watch(), read `watch.md` before any development.
+Parse it through `scripts/watch_policy.py` or the integrated parser, then use
+`scripts/watch_runtime.py` for the actual requested local action. Never call a
+parse-only result a running service. Help/status/doctor do not enable development.
+Do not combine watch commands with legacy expressions or other management calls.
+When CONTINUOUS_WATCH_WORKER=1, never install another watcher; the supplied
+one-round worker instructions override generic endless-loop/Git behavior.
 
 ## Command routing takes precedence
 

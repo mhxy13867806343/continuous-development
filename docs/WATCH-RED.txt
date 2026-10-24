@@ -1,0 +1,21 @@
+test_watch_policy (unittest.loader._FailedTest.test_watch_policy) ... ERROR
+
+======================================================================
+ERROR: test_watch_policy (unittest.loader._FailedTest.test_watch_policy)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_watch_policy
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/unittest/loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/usr/lib/python3.13/unittest/loader.py", line 339, in _get_module_from_name
+    __import__(name)
+    ~~~~~~~~~~^^^^^^
+  File "/mnt/data/watch-build/continuous-development/tests/test_watch_policy.py", line 7, in <module>
+    from watch_policy import parse_watch, quota_gate, retry_delay, classify_failure, validate_report
+ModuleNotFoundError: No module named 'watch_policy'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

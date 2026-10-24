@@ -1,5 +1,19 @@
 # continuous-development
 
+## 新增：通过 watch() 自动续作
+
+本下载包已合入实际本地执行器。先看 [README-WATCH.md](./README-WATCH.md)。
+
+```text
+@continuous-development watch()
+@continuous-development watch("status")
+@continuous-development watch("stop")
+```
+
+本版后台管理自己创建的工作树与线程，不等于自动接管GUI中所有聊天。
+未在你的电脑安装；原有自动归档、跨客户端和定时推送的未实现边界仍然保留。
+
+
 ## 当前下载包：完整目录已接入版
 
 本包已合入会话管理、交接、进度查看和低额度同步规则及解析脚本，不是增量安装包。
@@ -54,6 +68,7 @@ continuous-development/
 ├── git.md
 ├── quota-safety.md
 ├── subagents.md
+├── watch.md
 ├── session-lifecycle.md
 ├── handoff.md
 ├── progress.md
@@ -62,14 +77,21 @@ continuous-development/
 ├── lifecycle.defaults.json
 ├── scripts/
 │   ├── parse_invocation.py
-│   └── lifecycle_policy.py
+│   ├── lifecycle_policy.py
+│   ├── watch_policy.py
+│   ├── watch_rpc.py
+│   └── watch_runtime.py
 ├── templates/
 │   └── SESSION-HANDOFF.md
 ├── tests/
 │   ├── test_lifecycle_policy.py
-│   └── test_install_extension.py
+│   ├── test_install_extension.py
+│   ├── test_watch_policy.py
+│   ├── test_watch_rpc.py
+│   └── test_watch_runtime.py
 ├── docs/
 ├── README.md
+├── README-WATCH.md
 ├── README-安装说明.md
 ├── README-SESSION-MANAGEMENT.md
 ├── SUBAGENTS-INTEGRATION.md
