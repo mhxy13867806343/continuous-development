@@ -1,5 +1,17 @@
 # continuous-development
 
+## 当前下载包：完整目录已接入版
+
+本包已合入会话管理、交接、进度查看和低额度同步规则及解析脚本，不是增量安装包。
+直接按 [安装说明](README-安装说明.md) 合并到你原来使用的 Skill 目录即可，
+不必再次运行增量安装脚本。请先备份并保留原来的 `.git` 和个人修改。
+
+“完整目录”不代表已接通客户端执行能力：自动归档、新建聊天、真实额度读取、
+后台5分钟同步仍需宿主接口与执行器。复制文件本身不会启动这些动作。
+详见 [交付状态](IMPLEMENTATION-STATUS.md)。
+
+以下保留原仓库用法和扩展说明；旧版接入提示词仅供其他未接入副本参考。
+
 一个面向 Codex / Codex++ 的通用持续开发 Skill。
 
 它不会把项目写死成 Vue、React、Angular、Svelte、Rust、Godot、前端、后端等固定角色，而是先扫描当前仓库，再动态识别：
@@ -42,7 +54,29 @@ continuous-development/
 ├── git.md
 ├── quota-safety.md
 ├── subagents.md
+├── session-lifecycle.md
+├── handoff.md
+├── progress.md
+├── sync-quota.md
+├── host-adapters.md
+├── lifecycle.defaults.json
+├── scripts/
+│   ├── parse_invocation.py
+│   └── lifecycle_policy.py
+├── templates/
+│   └── SESSION-HANDOFF.md
+├── tests/
+│   ├── test_lifecycle_policy.py
+│   └── test_install_extension.py
+├── docs/
 ├── README.md
+├── README-安装说明.md
+├── README-SESSION-MANAGEMENT.md
+├── SUBAGENTS-INTEGRATION.md
+├── SESSION-INTEGRATION.md
+├── IMPLEMENTATION-STATUS.md
+├── install_extension.py
+├── PACKAGE-MANIFEST.json
 └── LICENSE
 ```
 
@@ -402,3 +436,20 @@ git -C ~/.codex/skills/continuous-development pull
 ## License
 
 MIT
+
+<!-- lifecycle-extension-v1: readme -->
+## 会话管理、进度查看与低额度同步扩展
+
+使用与限制见 [README-SESSION-MANAGEMENT.md](README-SESSION-MANAGEMENT.md)，
+宿主接入步骤见 [SESSION-INTEGRATION.md](SESSION-INTEGRATION.md)。
+
+```text
+@continuous-development sessions(initial=20, limit=15, rounds=15)
+@continuous-development handoff()
+@continuous-development open()
+@continuous-development sync(every="5m", threshold=1, on_low="checkpoint-push-pause")
+```
+
+本扩展脚本只做安全解析和策略计算。实际会话管理、5分钟定时器和Git推送
+需要相应宿主工具/执行器接入并验证；安装文档不等于这些功能已经启用。
+<!-- /lifecycle-extension-v1: readme -->

@@ -1,0 +1,92 @@
+[
+  {
+    "path": ".gitignore",
+    "expected_git_blob_sha": "4c8b8eb6f7ae8230fa319e651abce2007968dbb1",
+    "actual_git_blob_sha": "4c8b8eb6f7ae8230fa319e651abce2007968dbb1",
+    "matched": true
+  },
+  {
+    "path": "LICENSE",
+    "expected_git_blob_sha": "f49662472bf5c27116c000815baaf76a0aca2a3e",
+    "actual_git_blob_sha": "f49662472bf5c27116c000815baaf76a0aca2a3e",
+    "matched": true
+  },
+  {
+    "path": "README.md",
+    "expected_git_blob_sha": "2b69534903c94fe9c09e57cb324068156118400f",
+    "actual_git_blob_sha": "2b69534903c94fe9c09e57cb324068156118400f",
+    "matched": true
+  },
+  {
+    "path": "SKILL.md",
+    "expected_git_blob_sha": "1b1f8178cff09de9177dc4d41070c6a042f849a1",
+    "actual_git_blob_sha": "1b1f8178cff09de9177dc4d41070c6a042f849a1",
+    "matched": true
+  },
+  {
+    "path": "SUBAGENTS-INTEGRATION.md",
+    "expected_git_blob_sha": "a656adfcfd221a513a040cff13a5fd89023c2525",
+    "actual_git_blob_sha": "a656adfcfd221a513a040cff13a5fd89023c2525",
+    "matched": true
+  },
+  {
+    "path": "documentation.md",
+    "expected_git_blob_sha": "38326e3a12cb690b702ae1aca7f5a73651615f7f",
+    "actual_git_blob_sha": "38326e3a12cb690b702ae1aca7f5a73651615f7f",
+    "matched": true
+  },
+  {
+    "path": "git.md",
+    "expected_git_blob_sha": "1d23909fa1f00ed26791b1aabd7dbe73d5d55e7c",
+    "actual_git_blob_sha": "1d23909fa1f00ed26791b1aabd7dbe73d5d55e7c",
+    "matched": true
+  },
+  {
+    "path": "invocation.md",
+    "expected_git_blob_sha": "4aad22b04c35bb80b9de7462d3eecdcac04d6484",
+    "actual_git_blob_sha": "4aad22b04c35bb80b9de7462d3eecdcac04d6484",
+    "matched": true
+  },
+  {
+    "path": "orchestration.md",
+    "expected_git_blob_sha": "a17ff1da38f5c3667372f0d4aad31bb4dea1c4fc",
+    "actual_git_blob_sha": "a17ff1da38f5c3667372f0d4aad31bb4dea1c4fc",
+    "matched": true
+  },
+  {
+    "path": "quota-safety.md",
+    "expected_git_blob_sha": "57a92906f99f0fa36a05a96ed4fa265007133660",
+    "actual_git_blob_sha": "57a92906f99f0fa36a05a96ed4fa265007133660",
+    "matched": true
+  },
+  {
+    "path": "repository.md",
+    "expected_git_blob_sha": "ac995613c49d22b23d89e6edd702a70c384bd623",
+    "actual_git_blob_sha": "ac995613c49d22b23d89e6edd702a70c384bd623",
+    "matched": true
+  },
+  {
+    "path": "scripts/parse_invocation.py",
+    "expected_git_blob_sha": "bcf532c59b9875de432e212b95ad02843e279a09",
+    "actual_git_blob_sha": "bcf532c59b9875de432e212b95ad02843e279a09",
+    "matched": true
+  },
+  {
+    "path": "subagents.md",
+    "expected_git_blob_sha": "6c9a6a97448346faab646cd3149a45f6a2c27c65",
+    "actual_git_blob_sha": "6c9a6a97448346faab646cd3149a45f6a2c27c65",
+    "matched": true
+  },
+  {
+    "path": "typesafe.md",
+    "expected_git_blob_sha": "adf01016c13ae03c08b719566081024be28236d2",
+    "actual_git_blob_sha": "adf01016c13ae03c08b719566081024be28236d2",
+    "matched": true
+  },
+  {
+    "path": "validation.md",
+    "expected_git_blob_sha": "47bb8b40bd80df3883b14ea003193ab4c15f883c",
+    "actual_git_blob_sha": "47bb8b40bd80df3883b14ea003193ab4c15f883c",
+    "matched": true
+  }
+]

@@ -2,6 +2,15 @@
 
 ## Usage / quota rules
 
+<!-- lifecycle-extension-v1: quota-priority -->
+When sync-quota protection is enabled, authoritative remaining allowance at
+or below its configured threshold is a valid protective pause, even before
+the platform rejects a request. This overrides the older "only stop on actual
+blocking signals" wording below. Unknown/stale quota is not a guessed numeric
+value. Save checkpoints during work; a hard limit may prevent a final summary.
+See sync-quota.md. Prompt instructions cannot disable account credit billing.
+<!-- /lifecycle-extension-v1: quota-priority -->
+
 Continue while Codex still executes normally.
 
 Do not stop merely because remaining quota might be low.

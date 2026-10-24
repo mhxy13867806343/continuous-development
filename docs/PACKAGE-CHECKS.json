@@ -1,0 +1,156 @@
+{
+  "scope": "File packaging, static syntax, relative links and pure command parsing only; no live host actions.",
+  "source_commit": "51227dd8ce4a20f3ec7dd71c7ed3d64f0e0a26bf",
+  "base_blob_matches": 15,
+  "base_blob_files": 15,
+  "unit_tests": 64,
+  "unit_test_result": "PASS",
+  "python_syntax_files": [
+    "install_extension.py",
+    "scripts/parse_invocation.py",
+    "scripts/lifecycle_policy.py",
+    "tests/test_install_extension.py",
+    "tests/test_lifecycle_policy.py"
+  ],
+  "skill_references": [
+    "invocation.md",
+    "repository.md",
+    "orchestration.md",
+    "validation.md",
+    "typesafe.md",
+    "documentation.md",
+    "git.md",
+    "quota-safety.md",
+    "subagents.md",
+    "session-lifecycle.md",
+    "handoff.md",
+    "progress.md",
+    "sync-quota.md",
+    "host-adapters.md"
+  ],
+  "management_cli_smoke": [
+    {
+      "input": "@continuous-development open()",
+      "command": "open",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development open(\"当前项目\")",
+      "command": "open",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development handoff()",
+      "command": "handoff",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development handoff(\"codex://threads/example-only\")",
+      "command": "handoff",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development sessions(initial=20, limit=15, rounds=15)",
+      "command": "sessions",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development sessions(\"status\")",
+      "command": "sessions",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development sessions(\"stop\")",
+      "command": "sessions",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development sync(every=\"5m\", threshold=1, on_low=\"checkpoint-push-pause\")",
+      "command": "sync",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development sync(\"status\")",
+      "command": "sync",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "@continuous-development sync(\"stop\")",
+      "command": "sync",
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "sessions(limit=0)",
+      "exit_code": 2,
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "sync(every=\"0m\")",
+      "exit_code": 2,
+      "execution": "not_executed",
+      "pass": true
+    },
+    {
+      "input": "open(__import__(\"os\"))",
+      "exit_code": 2,
+      "execution": "not_executed",
+      "pass": true
+    }
+  ],
+  "legacy_outputs_preserved": [
+    {
+      "input": "$continuous-development always()",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development run()",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development help",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development status()",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development stop()",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development always() run(0.1) run(1)",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development[a,b,c(),d(1)]",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development a+b+c()+d(1.2)",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development lambda(run())",
+      "same_as_baseline": true
+    },
+    {
+      "input": "$continuous-development help Sub-agent",
+      "same_as_baseline": true
+    }
+  ],
+  "relative_links_checked": 6,
+  "host_automation_executed": false,
+  "remote_repositories_modified": false
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "activation": "requires_explicit_command_and_verified_host_tools",
+  "session_manager": {
+    "enabled": false,
+    "initial": 20,
+    "limit": 15,
+    "rounds": 15,
+    "scope": "host",
+    "drain_initial_batch_before_refill": true,
+    "count": "all_non_archived_root_sessions_in_scope",
+    "create_empty_replacements": false,
+    "archive_requires_verified_task_completion": true,
+    "unknown_inventory": "block_new_sessions"
+  },
+  "sync": {
+    "enabled": false,
+    "every": "5m",
+    "interval_seconds": 300,
+    "threshold": 1,
+    "on_low": "checkpoint-push-pause",
+    "remotes": null,
+    "quota_max_age_seconds": 120,
+    "resume_margin_percent": 1,
+    "unknown_quota": "pause_new_work",
+    "publish_only_reviewed_checkpoints": true,
+    "require_per_repository_lock": true,
+    "full_chat_upload": false
+  },
+  "privacy": {
+    "handoffs": "local_private_state",
+    "state_root": "~/.continuous-development/state",
+    "publish_private_thread_ids": false
+  },
+  "adapter_policy": {
+    "missing_capability": "report_unsupported_without_side_effects",
+    "write_internal_client_database": false
+  }
+}

@@ -17,6 +17,9 @@ import json
 import re
 import sys
 
+# lifecycle-extension-v1: safe management routing
+from lifecycle_policy import parse_lifecycle
+
 
 class InvocationParser:
     def __init__(self):
@@ -34,6 +37,11 @@ class InvocationParser:
         }
 
     def parse(self, raw_input: str) -> dict:
+        # lifecycle-extension-v1: route before legacy h/help regex
+        lifecycle = parse_lifecycle(raw_input)
+        if lifecycle is not None:
+            return lifecycle
+
         self.state["raw_input"] = raw_input.strip()
         text = raw_input.strip()
 
@@ -181,7 +189,12 @@ def main():
     parser = InvocationParser()
     if len(sys.argv) > 1:
         expr = " ".join(sys.argv[1:])
-        result = parser.parse(expr)
+        # lifecycle-extension-v1: invalid management input never falls through
+        try:
+            result = parser.parse(expr)
+        except ValueError as exc:
+            print(json.dumps({"error": str(exc), "execution": "not_executed"}, ensure_ascii=False), file=sys.stderr)
+            raise SystemExit(2)
         print(json.dumps(result, indent=2, ensure_ascii=False))
     else:
         # Default self-test suite

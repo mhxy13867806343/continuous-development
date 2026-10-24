@@ -1,5 +1,14 @@
 # Git Workflow and Remote Verification
 
+
+<!-- lifecycle-extension-v1: sync -->
+Periodic sync may publish only explicitly authorized reviewed checkpoints,
+not arbitrary dirty work. Use repository locks, explicit branch destinations,
+and independent live verification of every remote. Do not publish other
+projects or private conversation handoffs to this public Skill repository.
+Failed uploads are retried without force push or empty commits. See sync-quota.md.
+<!-- /lifecycle-extension-v1: sync -->
+
 ## Review before commit
 
 Before every commit inspect:

@@ -1,0 +1,182 @@
+{
+  "package": "continuous-development",
+  "delivery": "complete-preintegrated-directory",
+  "base_repository": "mhxy13867806343/continuous-development",
+  "base_commit": "51227dd8ce4a20f3ec7dd71c7ed3d64f0e0a26bf",
+  "extension": "session-extension-v1",
+  "archive_root": "continuous-development/",
+  "contains_git_history": false,
+  "host_actions_executed": false,
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 16,
+      "sha256": "4fd2531abcdd20c5e5dc5cd1ecba8f9c131bb1d0da2b0c4823c31580c7cc3d0d"
+    },
+    {
+      "path": "IMPLEMENTATION-STATUS.md",
+      "bytes": 1447,
+      "sha256": "54e8e2eead2da5ba1d25bfd3e4cac044f3e9793e1b12e3d0a1a410bf86eb53c6"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1092,
+      "sha256": "b621b0c50c03016efd1879024d80758390e24c0bc843889c223fd0082efda0c3"
+    },
+    {
+      "path": "README-SESSION-MANAGEMENT.md",
+      "bytes": 9021,
+      "sha256": "4890e4ac86678dc6fb6761a46e6f502ab9c841a8ea1c93d3c44f8735a8d438ad"
+    },
+    {
+      "path": "README-安装说明.md",
+      "bytes": 4363,
+      "sha256": "990b1e912ee9e0014f63d69de8c1499d3a35714404e85b2116eca4f139fe1670"
+    },
+    {
+      "path": "README.md",
+      "bytes": 14231,
+      "sha256": "258db4fb422c05e99191a2e6b79221e17a75751f5d7f67b66988593524160e52"
+    },
+    {
+      "path": "SESSION-INTEGRATION.md",
+      "bytes": 12162,
+      "sha256": "c6f96b05d9424db092c987badb6dffebc619e3927bbeec625ea37345e360400a"
+    },
+    {
+      "path": "SKILL.md",
+      "bytes": 4814,
+      "sha256": "93e04286dc2f61704d5e37f8e223619cdb5cef48d8c7b78944579f31a2bad80f"
+    },
+    {
+      "path": "SUBAGENTS-INTEGRATION.md",
+      "bytes": 14987,
+      "sha256": "1b25d5904db10ea3dfcb45b30c89c2e9e87793a15793e68bee9cfa0c1bd2cf38"
+    },
+    {
+      "path": "docs/PACKAGE-CHECKS.json",
+      "bytes": 3971,
+      "sha256": "d646ccca95cde7e5397b1cba97f1b1458e4f02823e7424e89f1664581d1ce9c9"
+    },
+    {
+      "path": "docs/SOURCE-VERIFICATION.json",
+      "bytes": 3037,
+      "sha256": "6aaa3ab2cf7448c8dd734349a875956cad401d6a66aac40d94463fb837e9c690"
+    },
+    {
+      "path": "docs/SOURCES.md",
+      "bytes": 2994,
+      "sha256": "037b499f6431d7f2e1248c856cc4ac65de64f5dc0c14d3ad389b505d1dd4f2ac"
+    },
+    {
+      "path": "docs/TEST-RESULTS.txt",
+      "bytes": 6482,
+      "sha256": "9c090525e86c6932fff43ffe1bbd5b37b304f8b74c91a126b86145bb465713ef"
+    },
+    {
+      "path": "documentation.md",
+      "bytes": 1491,
+      "sha256": "51abb9e13eb264d1eec6c79136612273869a2d5684de9ebea373862fdf7b230a"
+    },
+    {
+      "path": "git.md",
+      "bytes": 2080,
+      "sha256": "ca3401f324c9fd86aab79eb777750f50838f936e5047665bceb58c6d45817f46"
+    },
+    {
+      "path": "handoff.md",
+      "bytes": 2910,
+      "sha256": "2113c6e4f52a36e0dee6b4babe91f1ab7e74018835c579445c3e3e009f6932a2"
+    },
+    {
+      "path": "host-adapters.md",
+      "bytes": 3834,
+      "sha256": "7beacc00022885bcebace936227a687191ca43c8c0d543f44a24a93f894540c5"
+    },
+    {
+      "path": "install_extension.py",
+      "bytes": 13888,
+      "sha256": "c599bb99e98bfdfa0b47ea1b407067285cd8b0cb877d0a7cf42513cfcb38cd97"
+    },
+    {
+      "path": "invocation.md",
+      "bytes": 11912,
+      "sha256": "b83e3b9a721dc6b0ddfc92161a2062e855b7fe1be6bcdf692a76f9886961583a"
+    },
+    {
+      "path": "lifecycle.defaults.json",
+      "bytes": 1146,
+      "sha256": "61081c28a8113aeb88a9dd70e4c410f24cc333a9d09b91952a8f2fb563206a43"
+    },
+    {
+      "path": "orchestration.md",
+      "bytes": 4341,
+      "sha256": "4b75fd9269ca8e9bc46148942e1bed87e39ed6a3d359e827fa2fd0ca861734ba"
+    },
+    {
+      "path": "progress.md",
+      "bytes": 2424,
+      "sha256": "cb25372ce3a27eec150557515e22fca38658e144ee3cd298efe5c0bd74e87d7c"
+    },
+    {
+      "path": "quota-safety.md",
+      "bytes": 2317,
+      "sha256": "ccfeb0cfe65afa9bab9907633e1a97fdc0d69d2f060f60cfe730778aadae480f"
+    },
+    {
+      "path": "repository.md",
+      "bytes": 2445,
+      "sha256": "1c7a584737b5ec2db239b941dc09aa1e2182c7babbeb41ba08a6151e3c8eddcc"
+    },
+    {
+      "path": "scripts/lifecycle_policy.py",
+      "bytes": 12380,
+      "sha256": "3932c606ea0c3350b96f78538d0f974e1ffa7f66b3e5f7c8e8ac14468d8beebd"
+    },
+    {
+      "path": "scripts/parse_invocation.py",
+      "bytes": 8792,
+      "sha256": "a12d18d08bcfa05393d2006f961cd30f1cbecb0b834b28e659c4cdf4f29da443"
+    },
+    {
+      "path": "session-lifecycle.md",
+      "bytes": 7215,
+      "sha256": "5955e0894f2a4816aff38e0d671710bd17efc0b6e21ed2575145096f45c27eee"
+    },
+    {
+      "path": "subagents.md",
+      "bytes": 15651,
+      "sha256": "70ddea8f6023cce42bc2462f0199bac04878e69d3a0260cb0a7d3aef1c1b31c8"
+    },
+    {
+      "path": "sync-quota.md",
+      "bytes": 6391,
+      "sha256": "9b8cbde2672afd9054def58f608683453344d3051475491bf4678ab919a6d8fa"
+    },
+    {
+      "path": "templates/SESSION-HANDOFF.md",
+      "bytes": 1384,
+      "sha256": "277b24e54ae5948995a61eeb524cee0c8093e9217fda69053baae8f131360980"
+    },
+    {
+      "path": "tests/test_install_extension.py",
+      "bytes": 4843,
+      "sha256": "2c53685632aa76f9de8790e2f8302d441fb130992c97280bede8d6edb5e431b0"
+    },
+    {
+      "path": "tests/test_lifecycle_policy.py",
+      "bytes": 9459,
+      "sha256": "ca3aa1f78b3e7ccaf1cc4541bf8e1f57e280e6e96d7032d17970e064a26ccdc6"
+    },
+    {
+      "path": "typesafe.md",
+      "bytes": 597,
+      "sha256": "bda17101437389f5883b56fe9dab1ac7166bb68e6d7e8032e8b9ef309839740f"
+    },
+    {
+      "path": "validation.md",
+      "bytes": 1532,
+      "sha256": "1aaa0d501d50143c9027f2bc14827eef9d740cbd6043858ccc955ec820d77e11"
+    }
+  ]
+}

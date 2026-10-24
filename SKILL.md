@@ -1,6 +1,6 @@
 ---
 name: continuous-development
-description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes. Supports Sub-agent selection.
+description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes. Supports Sub-agent selection and session lifecycle, handoff, progress, and quota-aware sync rules.
 ---
 
 # Continuous Development
@@ -18,6 +18,11 @@ When invoked, load and follow all rule files in this directory before execution:
 7. `git.md`
 8. `quota-safety.md`
 9. `subagents.md`
+10. `session-lifecycle.md`
+11. `handoff.md`
+12. `progress.md`
+13. `sync-quota.md`
+14. `host-adapters.md`
 
 Treat these files as one combined skill specification.
 
@@ -33,6 +38,20 @@ Before starting work:
 - this `SKILL.md` is the only entry point.
 
 ## Command routing takes precedence
+
+<!-- lifecycle-extension-v1: routing -->
+For sessions(), handoff(), open(), and sync(), parse lifecycle intent before
+any generic development, Git, subagent, or automation side effects. Follow
+session-lifecycle.md, handoff.md, progress.md, sync-quota.md, and host-adapters.md.
+open() and lifecycle status actions are read-only. handoff() only exports a
+private handoff. Lifecycle stop actions disable only their own manager/job.
+These management commands return after handling their own operation; they
+must not fall through to the generic development loop. A parser error stops
+routing. Runtime capability, actual successful actions, and read-back evidence
+are required before reporting a manager/job as enabled. A parser result is not
+execution. Thread caps, initial drain, quota protection, pending selection,
+and explicit user restrictions take precedence over always()/do-not-stop.
+<!-- /lifecycle-extension-v1: routing -->
 
 Read all rule files relative to this SKILL.md, then classify the invocation
 before starting repository development or causing side effects.

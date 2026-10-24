@@ -18,6 +18,19 @@ or invent tasks to force every selected agent to run.
 The existing dynamic-workstream and validation rules continue to apply.
 Only the main agent integrates Git changes; preserve current user restrictions.
 
+
+<!-- lifecycle-extension-v1: admission -->
+## Lifecycle admission before delegation
+
+Apply enabled lifecycle/quota checks before dispatch. Drain the initial batch
+without killing running tasks. A rotation-requested thread may finish its
+current scoped task but must not accept another. A turn completion notification
+is not business-task completion. Reserve thread capacity under a scope-wide
+lock before creating successors. Verify handoff, safe execution state and
+archive success first. Never bypass a pause using subagents or recovery jobs.
+See session-lifecycle.md and sync-quota.md.
+<!-- /lifecycle-extension-v1: admission -->
+
 ## Dynamic workstreams
 
 Do not use fixed roles.

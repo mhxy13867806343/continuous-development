@@ -2,6 +2,25 @@
 
 ## Supported commands
 
+<!-- lifecycle-extension-v1: commands -->
+### Session lifecycle, progress and sync
+
+- `sessions(initial=20, limit=15, rounds=15, scope="host")`: adopt a verified
+  initial batch, finish old tasks, save handoffs and archive safely, then refill
+  within the cap. Threshold rounds do not mark an unfinished task complete.
+- `sessions("status")` / `sessions("stop")`: inspect/disable that manager only.
+- `handoff()` / `handoff("source ID or URL")`: private Markdown handoff.
+- `open()` / `open("project name/ID/path or thread URL")`: read-only progress.
+- `sync(every="5m", threshold=1, on_low="checkpoint-push-pause")`: request
+  a real supported/local synchronization schedule and a low-quota gate.
+- `sync("status")` / `sync("stop")`: inspect/disable that synchronization job.
+
+See README-SESSION-MANAGEMENT.md and SESSION-INTEGRATION.md for capability
+requirements. Use one lifecycle command per message. New command arguments
+are literals only. Parse them with scripts/lifecycle_policy.py before legacy
+h/help matching. Syntax accepted does not mean a timer or host operation ran.
+<!-- /lifecycle-extension-v1: commands -->
+
 ### help / h
 
 `$continuous-development help`

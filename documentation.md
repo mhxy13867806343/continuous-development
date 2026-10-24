@@ -1,5 +1,14 @@
 # Documentation and Progress Tracking
 
+
+<!-- lifecycle-extension-v1: progress -->
+Store private thread handoffs separately from public progress. open() reports
+only a known task-snapshot denominator; unknown evidence stays unknown. Record
+actual archive/create/sync receipts, not plans as successful actions. Keep
+post-push receipts in local state to avoid endless commits recording their own
+commit SHA. See handoff.md and progress.md.
+<!-- /lifecycle-extension-v1: progress -->
+
 ## Discover existing conventions
 
 Look for README.md, TODO.md, ROADMAP.md, CHANGELOG.md, PROGRESS.md, docs/, ADRs, design docs, architecture docs, and development logs.
