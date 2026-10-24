@@ -43,6 +43,8 @@
 
 ## 功能
 
+> 💡 **方法与示例大全**：请参阅 [EXAMPLES.md](EXAMPLES.md)，包含全部基础命令、持续循环、子代理选择、AST 管道、生命周期与 watch() 的详细使用范例及速查表。
+
 - 动态识别任意技术栈和项目结构
 - 动态决定是否需要 1～4 个子代理
 - 持续开发，不因一轮任务完成就主动停止
@@ -90,6 +92,7 @@ continuous-development/
 │   ├── test_watch_rpc.py
 │   └── test_watch_runtime.py
 ├── docs/
+├── EXAMPLES.md
 ├── README.md
 ├── README-WATCH.md
 ├── README-安装说明.md
