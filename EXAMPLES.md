@@ -16,7 +16,8 @@
 6. [低额度保护与定时同步 (sync)](#6-低额度保护与定时同步-sync)
 7. [真实后台守护与自动续作 (watch)](#7-真实后台守护与自动续作-watch)
 8. [CLI 调试与解析自测 (Scripts)](#8-cli-调试与解析自测-scripts)
-9. [完整速查表 (Cheat Sheet)](#9-完整速查表-cheat-sheet)
+9. [JS 箭头函数快捷命令与提示 (JavaScript Arrow Commands)](#9-js-箭头函数快捷命令与提示-javascript-arrow-commands)
+10. [完整速查表 (Cheat Sheet)](#10-完整速查表-cheat-sheet)
 
 ---
 
@@ -324,7 +325,78 @@ python3 scripts/watch_runtime.py --project . --invocation 'watch("stop")' --appl
 
 ---
 
-## 9. 完整速查表 (Cheat Sheet)
+## 9. JS 箭头函数快捷命令与提示 (JavaScript Arrow Commands)
+
+支持基于受限 JS 箭头语法的快捷命令别名、参数提示和本地补全。详细设计与限制见 [README-JS-COMMANDS.md](README-JS-COMMANDS.md)。
+
+### 9.1 查看所有可用命令 `commands()` (只读)
+列出全部内置命令和自定义注册别名：
+```text
+@continuous-development commands()
+$continuous-development commands()
+```
+
+### 9.2 命令提示与参数签名补全 (只读)
+* **前缀候选查询**：输入未完成的标识符，查看匹配候选（不执行任务）：
+  ```text
+  @continuous-development suggest("a")
+  @continuous-development a
+  @continuous-development wa
+  ```
+* **参数签名提示**：输入带左括号的命令，查看当前参数高亮提示与示例：
+  ```text
+  @continuous-development a(
+  @continuous-development a("修复登录", 
+  ```
+
+### 9.3 执行已注册的快捷命令别名
+默认内置在 `commands/shortcuts.example.js` 中（用户可在 `commands/shortcuts.js` 中自定义）：
+```text
+# 顺序展开并执行两项独立任务
+@continuous-development a("修复登录", "补回归测试")
+
+# 零参数查看状态（展开为 status()，保持只读）
+@continuous-development b()
+
+# 单参数查看指定项目进度
+@continuous-development c("ecom")
+
+# 选项参数启动后台 watch 任务
+@continuous-development auto("60s", 1)
+
+# 快捷环境诊断
+@continuous-development check()
+```
+
+### 9.4 自定义箭头函数定义 (仅预览，需显式保存)
+直接输入 `const ... => ...` 仅作为静态语法检查和**预览**，不会执行也不会静默写入：
+```javascript
+// 多参数 + 块体（按顺序执行任务）
+const a = (b, c) => {
+  task(b);
+  task(c);
+};
+
+// 零参数
+const b = () => {
+  status();
+};
+
+// 单参数省略括号
+const c = project => {
+  open(project);
+};
+
+// 默认参数 + watch 选项对象
+const auto = (every = "60s", threshold = 1) => {
+  watch({every, retry: 3, threshold});
+};
+```
+当需要保存自定义别名时，显式要求写入或直接保存到 `commands/shortcuts.js` 文件中。
+
+---
+
+## 10. 完整速查表 (Cheat Sheet)
 
 | 功能类别 | 典型命令示例 | 性质 | 核心作用与说明 |
 | :--- | :--- | :---: | :--- |
@@ -352,3 +424,10 @@ python3 scripts/watch_runtime.py --project . --invocation 'watch("stop")' --appl
 | **守护状态** | `watch("status")` | 只读 | 回读 LaunchAgent 真实运行阶段与锁状态 |
 | **守护中断** | `watch("stop")` | 本地后台 | 优雅中断守护任务并卸载本地服务 |
 | **守护恢复** | `watch("resume")` | 本地后台 | 在人工确认后恢复已阻塞或停止的守护任务 |
+| **JS 列出命令** | `commands()` | 只读 | 查看所有内置及已注册的 JS 快捷命令 |
+| **JS 候选提示** | `suggest("a")` 或单独输入 `a` | 只读 | 查询匹配的命令名称与签名说明 |
+| **JS 参数提示** | `a(` 或 `a("arg1",` | 只读 | 高亮当前参数序号、类型与示例 |
+| **JS 别名展开** | `a("任务1", "任务2")` | 计划 | 展开为受限任务计划，按安全规则分步执行 |
+| **JS 快捷检查** | `check()` | 只读 | 快捷展开为 `watch("doctor")` |
+| **JS 别名预览** | `const x = () => status();` | 预览 | 语法检查与效果预览，不产生修改 |
+

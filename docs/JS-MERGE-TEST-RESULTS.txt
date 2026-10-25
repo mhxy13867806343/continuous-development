@@ -1,0 +1,370 @@
+JS 合并版本测试记录
+
+基线：用户上传 continuous-development-main.zip
+运行环境：Linux / Python 3.13.5 / Node.js v22.16.0
+不包含用户 Mac、原生输入菜单、真实 Codex 服务或远程推送实测。
+
+Python unittest（141 项）：
+.............................................................................................................................................
+----------------------------------------------------------------------
+Ran 141 tests in 16.261s
+
+OK
+
+Node test（48 项）：
+TAP version 13
+# Subtest: three arrow shapes
+ok 1 - three arrow shapes
+  ---
+  duration_ms: 7.140105
+  type: 'test'
+  ...
+# Subtest: two args expand in order
+ok 2 - two args expand in order
+  ---
+  duration_ms: 1.135852
+  type: 'test'
+  ...
+# Subtest: zero arg
+ok 3 - zero arg
+  ---
+  duration_ms: 0.84886
+  type: 'test'
+  ...
+# Subtest: single unparenthesized parameter
+ok 4 - single unparenthesized parameter
+  ---
+  duration_ms: 0.428315
+  type: 'test'
+  ...
+# Subtest: default literal params
+ok 5 - default literal params
+  ---
+  duration_ms: 0.558703
+  type: 'test'
+  ...
+# Subtest: all results are not executed
+ok 6 - all results are not executed
+  ---
+  duration_ms: 0.390389
+  type: 'test'
+  ...
+# Subtest: missing arg fails
+ok 7 - missing arg fails
+  ---
+  duration_ms: 0.803381
+  type: 'test'
+  ...
+# Subtest: extra arg fails
+ok 8 - extra arg fails
+  ---
+  duration_ms: 0.508046
+  type: 'test'
+  ...
+# Subtest: prefix candidates
+ok 9 - prefix candidates
+  ---
+  duration_ms: 6.843186
+  type: 'test'
+  ...
+# Subtest: exact bare alias must not execute
+ok 10 - exact bare alias must not execute
+  ---
+  duration_ms: 0.758133
+  type: 'test'
+  ...
+# Subtest: incomplete call parameter 2
+ok 11 - incomplete call parameter 2
+  ---
+  duration_ms: 0.450169
+  type: 'test'
+  ...
+# Subtest: comma in a string not arg separator
+ok 12 - comma in a string not arg separator
+  ---
+  duration_ms: 0.428656
+  type: 'test'
+  ...
+# Subtest: nested object comma not arg separator
+ok 13 - nested object comma not arg separator
+  ---
+  duration_ms: 0.912947
+  type: 'test'
+  ...
+# Subtest: definition preview no persistence
+ok 14 - definition preview no persistence
+  ---
+  duration_ms: 0.3912
+  type: 'test'
+  ...
+# Subtest: duplicate names rejected
+ok 15 - duplicate names rejected
+  ---
+  duration_ms: 0.234524
+  type: 'test'
+  ...
+# Subtest: reserved builtin cannot be replaced
+ok 16 - reserved builtin cannot be replaced
+  ---
+  duration_ms: 0.242786
+  type: 'test'
+  ...
+# Subtest: unknown command rejected
+ok 17 - unknown command rejected
+  ---
+  duration_ms: 0.19877
+  type: 'test'
+  ...
+# Subtest: placeholder body rejected with error
+ok 18 - placeholder body rejected with error
+  ---
+  duration_ms: 0.142375
+  type: 'test'
+  ...
+# Subtest: no eval
+ok 19 - no eval
+  ---
+  duration_ms: 0.129245
+  type: 'test'
+  ...
+# Subtest: no require
+ok 20 - no require
+  ---
+  duration_ms: 0.122495
+  type: 'test'
+  ...
+# Subtest: no process methods
+ok 21 - no process methods
+  ---
+  duration_ms: 0.216556
+  type: 'test'
+  ...
+# Subtest: no top level execution
+ok 22 - no top level execution
+  ---
+  duration_ms: 0.118038
+  type: 'test'
+  ...
+# Subtest: no async
+ok 23 - no async
+  ---
+  duration_ms: 0.15943
+  type: 'test'
+  ...
+# Subtest: no loops
+ok 24 - no loops
+  ---
+  duration_ms: 0.177828
+  type: 'test'
+  ...
+# Subtest: no computed object keys
+ok 25 - no computed object keys
+  ---
+  duration_ms: 0.174693
+  type: 'test'
+  ...
+# Subtest: no proto key
+ok 26 - no proto key
+  ---
+  duration_ms: 0.13906
+  type: 'test'
+  ...
+# Subtest: no arbitrary arg expression
+ok 27 - no arbitrary arg expression
+  ---
+  duration_ms: 1.60475
+  type: 'test'
+  ...
+# Subtest: no recursively expanding alias
+ok 28 - no recursively expanding alias
+  ---
+  duration_ms: 0.199802
+  type: 'test'
+  ...
+# Subtest: template literal safely substituted
+ok 29 - template literal safely substituted
+  ---
+  duration_ms: 0.59008
+  type: 'test'
+  ...
+# Subtest: quoted injection remains data
+ok 30 - quoted injection remains data
+  ---
+  duration_ms: 0.375596
+  type: 'test'
+  ...
+# Subtest: nested aliases expanded
+ok 31 - nested aliases expanded
+  ---
+  duration_ms: 0.248033
+  type: 'test'
+  ...
+# Subtest: return expression alias
+ok 32 - return expression alias
+  ---
+  duration_ms: 0.261744
+  type: 'test'
+  ...
+# Subtest: code after return rejected
+ok 33 - code after return rejected
+  ---
+  duration_ms: 0.154072
+  type: 'test'
+  ...
+# Subtest: oversize input rejects
+ok 34 - oversize input rejects
+  ---
+  duration_ms: 0.076595
+  type: 'test'
+  ...
+# Subtest: complete never expands a finished call
+ok 35 - complete never expands a finished call
+  ---
+  duration_ms: 0.329237
+  type: 'test'
+  ...
+# Subtest: invalid cursor rejects
+ok 36 - invalid cursor rejects
+  ---
+  duration_ms: 0.45078
+  type: 'test'
+  ...
+# Subtest: suggest command read only
+ok 37 - suggest command read only
+  ---
+  duration_ms: 0.380093
+  type: 'test'
+  ...
+# Subtest: commands list read only
+ok 38 - commands list read only
+  ---
+  duration_ms: 0.327523
+  type: 'test'
+  ...
+# Subtest: unknown names have no auto-execution fallback
+ok 39 - unknown names have no auto-execution fallback
+  ---
+  duration_ms: 0.404921
+  type: 'test'
+  ...
+# Subtest: JS object options literal
+ok 40 - JS object options literal
+  ---
+  duration_ms: 0.328586
+  type: 'test'
+  ...
+# Subtest: no broad js code runtime
+ok 41 - no broad js code runtime
+  ---
+  duration_ms: 0.431811
+  type: 'test'
+  ...
+# Subtest: unknown statement nodes fail
+ok 42 - unknown statement nodes fail
+  ---
+  duration_ms: 0.198649
+  type: 'test'
+  ...
+# Subtest: command name at middle cursor replaces full token
+ok 43 - command name at middle cursor replaces full token
+  ---
+  duration_ms: 0.346612
+  type: 'test'
+  ...
+# Subtest: watch JS options key completion
+ok 44 - watch JS options key completion
+  ---
+  duration_ms: 0.499132
+  type: 'test'
+  ...
+# Subtest: legacy options key completion
+ok 45 - legacy options key completion
+  ---
+  duration_ms: 0.586964
+  type: 'test'
+  ...
+# Subtest: watch action string completion
+ok 46 - watch action string completion
+  ---
+  duration_ms: 0.521095
+  type: 'test'
+  ...
+# Subtest: cannot call a parameter as function
+ok 47 - cannot call a parameter as function
+  ---
+  duration_ms: 0.164558
+  type: 'test'
+  ...
+# Subtest: nested quote in template does not execute
+ok 48 - nested quote in template does not execute
+  ---
+  duration_ms: 0.326733
+  type: 'test'
+  ...
+1..48
+# tests 48
+# suites 0
+# pass 48
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 109.389461
+
+Integrated parser smoke（9 项）：
+[
+  {
+    "input": "@continuous-development commands()",
+    "returncode": 0,
+    "kind": "suggestions",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development a",
+    "returncode": 0,
+    "kind": "suggestions",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development a(",
+    "returncode": 0,
+    "kind": "suggestions",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development a(\"修复登录\",\"补测试\")",
+    "returncode": 0,
+    "kind": "plan",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development b()",
+    "returncode": 0,
+    "kind": "plan",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development c(\"ecom\")",
+    "returncode": 0,
+    "kind": "plan",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development watch(\"doctor\")",
+    "returncode": 0,
+    "kind": "watch",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development sessions(\"status\")",
+    "returncode": 0,
+    "kind": "sessions",
+    "execution": "not_executed"
+  },
+  {
+    "input": "@continuous-development open()",
+    "returncode": 0,
+    "kind": "open",
+    "execution": "not_executed"
+  }
+]

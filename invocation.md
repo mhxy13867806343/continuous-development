@@ -347,3 +347,12 @@ Every scheduled run should:
 A scheduled run must not stop merely because one development round completed.
 
 For `always()` mode, scheduled continuation should re-enter persistent continuous-loop behavior.
+
+# js-command-extension-v1
+## JS arrows, aliases and suggestions
+
+Follow `js-commands.md`. `commands()` lists commands; `suggest("a")` or a bare
+`a` returns candidates; `a(` returns signature help. A complete registered alias
+call expands to a validated plan. A const-arrow block is only a definition preview
+unless the user explicitly asks to save it. Do not execute the JS source.
+See `README-JS-COMMANDS.md` for supported grammar and the client completion API.

@@ -22,6 +22,9 @@ from lifecycle_policy import parse_lifecycle
 from watch_policy import parse_watch
 
 
+# js-command-extension-v1
+from js_command_bridge import parse_js
+
 class InvocationParser:
     def __init__(self):
         self.state = {
@@ -38,6 +41,10 @@ class InvocationParser:
         }
 
     def parse(self, raw_input: str) -> dict:
+        js_result = parse_js(raw_input)
+        if js_result is not None:
+            return js_result
+
         # watch-extension-v1: management methods never fall through to development.
         watch = parse_watch(raw_input)
         if watch is not None:

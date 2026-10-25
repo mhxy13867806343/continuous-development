@@ -1,0 +1,73 @@
+{
+  "source": "continuous-development-main.zip",
+  "source_sha256": "58f1fdce25bb9a916b0f2b4a0e6132d887d6399a4f3fbbd42b36dca39fb3c653",
+  "merge_scope": "preserve uploaded repository layout; integrate JS arrow command and read-only completion support",
+  "original_file_count": 53,
+  "removed_original_files": [],
+  "external_installer_required": false,
+  "python_tests": 141,
+  "javascript_tests": 48,
+  "integrated_smoke_checks": 9,
+  "native_composer_popup_implemented": false,
+  "remote_submission": {
+    "github": "write rejected: 403 Resource not accessible by integration",
+    "gitee": "connection failed: Could not resolve host: gitee.com",
+    "local_runner": "offline: tunnel_client_not_seen"
+  },
+  "smoke": [
+    {
+      "input": "@continuous-development commands()",
+      "returncode": 0,
+      "kind": "suggestions",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development a",
+      "returncode": 0,
+      "kind": "suggestions",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development a(",
+      "returncode": 0,
+      "kind": "suggestions",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development a(\"修复登录\",\"补测试\")",
+      "returncode": 0,
+      "kind": "plan",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development b()",
+      "returncode": 0,
+      "kind": "plan",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development c(\"ecom\")",
+      "returncode": 0,
+      "kind": "plan",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development watch(\"doctor\")",
+      "returncode": 0,
+      "kind": "watch",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development sessions(\"status\")",
+      "returncode": 0,
+      "kind": "sessions",
+      "execution": "not_executed"
+    },
+    {
+      "input": "@continuous-development open()",
+      "returncode": 0,
+      "kind": "open",
+      "execution": "not_executed"
+    }
+  ]
+}

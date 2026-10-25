@@ -1,6 +1,6 @@
 {
-  "package": "continuous-development-watch-complete",
-  "scope": "integrated skill plus limited macOS/Codex watch runtime",
+  "package": "continuous-development-js-merged",
+  "scope": "uploaded repository with JS arrow and completion additions; no native composer UI integration",
   "tests": {
     "entry_rule_references": [
       "invocation.md",
@@ -17,34 +17,46 @@
       "handoff.md",
       "progress.md",
       "sync-quota.md",
-      "host-adapters.md"
+      "host-adapters.md",
+      "js-commands.md"
     ],
     "all_references_exist": true,
     "python_syntax": "passed",
-    "test_count": 124,
+    "python_tests": 141,
+    "javascript_tests": 48,
+    "test_count": 189,
     "test_result": "passed",
-    "test_scope": "unit tests plus simulated stdio App Server subprocesses and temporary local Git repositories",
-    "native_macos_launchd_tested": false,
+    "integrated_smoke_count": 9,
+    "native_macos_tested": false,
     "real_codex_account_tested": false,
-    "user_machine_installed": false,
     "remote_repositories_modified": false,
-    "base_zip_sha256": "05cc5aa689595cb78113760cb5efa834c0188c42d0509ce9435d206aa0dddbc9"
+    "base_zip_sha256": "58f1fdce25bb9a916b0f2b4a0e6132d887d6399a4f3fbbd42b36dca39fb3c653"
   },
   "files": [
     {
       "path": ".gitignore",
-      "size": 16,
-      "sha256": "4fd2531abcdd20c5e5dc5cd1ecba8f9c131bb1d0da2b0c4823c31580c7cc3d0d"
+      "size": 35,
+      "sha256": "92a612ac9fa0a8dbd7ba0b7ebc18285046eb58338d00cbc43babf518a8412160"
+    },
+    {
+      "path": "EXAMPLES.md",
+      "size": 13934,
+      "sha256": "87ce2019994e1e3acd9d47a3acb75a46fa8a69d4b6819c589cd281de0d2a6fa3"
     },
     {
       "path": "IMPLEMENTATION-STATUS.md",
-      "size": 2161,
-      "sha256": "d922412423f6a6448dab0e6d22299905fb4a3d33b396fca847e32e0dfc6c7cfb"
+      "size": 2558,
+      "sha256": "1b1597219b5d7d724f67ae44d4b108f3264a2e0ca633468290724f19d49071bf"
     },
     {
       "path": "LICENSE",
       "size": 1092,
       "sha256": "b621b0c50c03016efd1879024d80758390e24c0bc843889c223fd0082efda0c3"
+    },
+    {
+      "path": "README-JS-COMMANDS.md",
+      "size": 7983,
+      "sha256": "8f92e1ac017f7a955158198ae6d0aaaf93ac573aae019e020363ff2f87daf58b"
     },
     {
       "path": "README-SESSION-MANAGEMENT.md",
@@ -63,8 +75,8 @@
     },
     {
       "path": "README.md",
-      "size": 14696,
-      "sha256": "3488e42e785809b6e58e2b31ddf51c121f0fee0150b54968a6ae8dc0cf4c592b"
+      "size": 16424,
+      "sha256": "d5faf2060d1195d55ca118193d1566d00931a105e76be1fd961f350b6892e26c"
     },
     {
       "path": "SESSION-INTEGRATION.md",
@@ -73,13 +85,33 @@
     },
     {
       "path": "SKILL.md",
-      "size": 5429,
-      "sha256": "9e4defcc03b115a4324b425eb4d1825fe30e432d259f1d6d5e42b46e63565303"
+      "size": 5930,
+      "sha256": "3cde096a08fc0a91d6c6abad9b7011d10883a707f1a2125183dd6dc0eaf01bcd"
     },
     {
       "path": "SUBAGENTS-INTEGRATION.md",
       "size": 14987,
       "sha256": "1b25d5904db10ea3dfcb45b30c89c2e9e87793a15793e68bee9cfa0c1bd2cf38"
+    },
+    {
+      "path": "commands/shortcuts.example.js",
+      "size": 757,
+      "sha256": "3c185aa568824e9dd4f6db3ff4412351547b9210949c657ea01061e0c1d7d32c"
+    },
+    {
+      "path": "docs/JS-COMMANDS-DESIGN.md",
+      "size": 2311,
+      "sha256": "517bbf2dbf8a9b2dd53d82e536cc63c4180c93c629f37524afea87b539a421e9"
+    },
+    {
+      "path": "docs/JS-MERGE-CHECKS.json",
+      "size": 2072,
+      "sha256": "1f641717805097650889708ae12cd5ee4d5f3e2c9f4346d6101f4b198a82edea"
+    },
+    {
+      "path": "docs/JS-MERGE-TEST-RESULTS.txt",
+      "size": 7831,
+      "sha256": "2329f906d144eb5f00d83977531bea9188087ba57822d0f97871c93773398054"
     },
     {
       "path": "docs/PACKAGE-CHECKS-BASELINE.json",
@@ -110,6 +142,11 @@
       "path": "docs/TEST-RESULTS.txt",
       "size": 11587,
       "sha256": "fb356990b30f869b8519753316856d2889e6b7ed5760c0b678b83b8ea3d3c281"
+    },
+    {
+      "path": "docs/THIRD-PARTY.md",
+      "size": 358,
+      "sha256": "3dbd42c8a0fb75638f80e0736a01a91e0a3f44c15f88810314b47974200621db"
     },
     {
       "path": "docs/WATCH-DESIGN.md",
@@ -168,8 +205,13 @@
     },
     {
       "path": "invocation.md",
-      "size": 12414,
-      "sha256": "29382d59079fe5ab194a3b4c0b37058697bdd21b08c87871339a33c95d7b250c"
+      "size": 12878,
+      "sha256": "ec5f7e2c6d11e1adc82bba25232e12634a8050eab99493639720cee704bc65d8"
+    },
+    {
+      "path": "js-commands.md",
+      "size": 3888,
+      "sha256": "ee5cf2f5066c43539017f62e5a11e3fc50fe4446901a89887b26b4c5bad11909"
     },
     {
       "path": "lifecycle.defaults.json",
@@ -197,14 +239,39 @@
       "sha256": "1c7a584737b5ec2db239b941dc09aa1e2182c7babbeb41ba08a6151e3c8eddcc"
     },
     {
+      "path": "scripts/complete_command.py",
+      "size": 722,
+      "sha256": "f11c7ca3bab6b22bc7d3d7396862c41fe78f50216b1214bd61eac67e07f7d2a0"
+    },
+    {
+      "path": "scripts/js_command_bridge.py",
+      "size": 5859,
+      "sha256": "1e4f0816b8c5f195e2f6beb73ba62bacfd94a2cbb1e0026fd80b8e39355628b3"
+    },
+    {
+      "path": "scripts/js_commands.cjs",
+      "size": 16300,
+      "sha256": "7751c688d9c30501d79b5cde9b36363a2f27f44d7292da0bf9797932d20ea2af"
+    },
+    {
       "path": "scripts/lifecycle_policy.py",
       "size": 12380,
       "sha256": "3932c606ea0c3350b96f78538d0f974e1ffa7f66b3e5f7c8e8ac14468d8beebd"
     },
     {
       "path": "scripts/parse_invocation.py",
-      "size": 9008,
-      "sha256": "1cbd15c1960f37b99bc1b0db1ddf8eaf65edb9b73c61fc84f9849ac49898e8d0"
+      "size": 9178,
+      "sha256": "7a6638f2ef0222a2ce3f92a9e4bc2c1b45c174b719ff016afacf0bfa332d330d"
+    },
+    {
+      "path": "scripts/vendor/ACORN-LICENSE",
+      "size": 1099,
+      "sha256": "76a876cf886ff9be2a8b5e2e86514fed06223c8c9f0c1e9ee9606e93841e00b7"
+    },
+    {
+      "path": "scripts/vendor/acorn.cjs",
+      "size": 241575,
+      "sha256": "fdb08546776ec6228b03e8d02b40d4ab3255bae5f401adba7ff5dad927ac5c9c"
     },
     {
       "path": "scripts/watch_policy.py",
@@ -252,6 +319,16 @@
       "sha256": "2c53685632aa76f9de8790e2f8302d441fb130992c97280bede8d6edb5e431b0"
     },
     {
+      "path": "tests/test_js_bridge.py",
+      "size": 2772,
+      "sha256": "e2b29d31d698269b905da153bb550eff313443b9554a81ba01716660d6cc0ebb"
+    },
+    {
+      "path": "tests/test_js_commands.cjs",
+      "size": 6304,
+      "sha256": "2cbed70797dbde89150d3387fa57d8d0b57c94300c5f4296736cd829799ca509"
+    },
+    {
       "path": "tests/test_lifecycle_policy.py",
       "size": 9459,
       "sha256": "ca3aa1f78b3e7ccaf1cc4541bf8e1f57e280e6e96d7032d17970e064a26ccdc6"
@@ -268,8 +345,8 @@
     },
     {
       "path": "tests/test_watch_runtime.py",
-      "size": 7573,
-      "sha256": "88567f3619fd5c58108d72d18998568bc9daa4645b39bb0ac06c7cdb63e3bfbd"
+      "size": 7593,
+      "sha256": "f9de7193d27c27c1ba4c252249ef403b331c5bbe34c3ec2bb0fb4439f8beea37"
     },
     {
       "path": "typesafe.md",

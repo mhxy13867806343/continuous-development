@@ -1,7 +1,17 @@
 ---
 name: continuous-development
-description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes. Supports Sub-agent selection, session lifecycle, handoff, progress, quota-aware sync, and background watch rules.
+description: Continuously develop the current repository by dynamically detecting technologies, architecture, workstreams, validation commands, documentation conventions, Git state, and safe continuation rules. Supports normal, scheduled, status, stop, always-on, and help/h quick reference modes. Supports Sub-agent selection, session lifecycle, handoff, progress, quota-aware sync, background watch, and JavaScript arrow command extensions.
 ---
+
+# js-command-extension-v1
+## JS command routing (before generic execution)
+
+Read `js-commands.md` before default development and other command routes.
+Use the integrated parser for arrow definitions, registered aliases, commands(),
+suggest(), bare prefixes and incomplete calls. Suggestions and definition previews
+are read-only; never fall through to development, Git or scheduling.
+The local completion provider does not itself install a native composer popup.
+
 
 # Continuous Development
 
@@ -24,6 +34,7 @@ When invoked, load and follow all rule files in this directory before execution:
 13. `progress.md`
 14. `sync-quota.md`
 15. `host-adapters.md`
+16. `js-commands.md`
 
 Treat these files as one combined skill specification.
 

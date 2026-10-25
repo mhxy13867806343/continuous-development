@@ -76,13 +76,23 @@ continuous-development/
 ├── progress.md
 ├── sync-quota.md
 ├── host-adapters.md
+├── js-commands.md
 ├── lifecycle.defaults.json
+├── commands/
+│   ├── shortcuts.example.js
+│   └── shortcuts.js (可选用户自定义)
 ├── scripts/
 │   ├── parse_invocation.py
 │   ├── lifecycle_policy.py
 │   ├── watch_policy.py
 │   ├── watch_rpc.py
-│   └── watch_runtime.py
+│   ├── watch_runtime.py
+│   ├── js_command_bridge.py
+│   ├── js_commands.cjs
+│   ├── complete_command.py
+│   └── vendor/
+│       ├── acorn.cjs
+│       └── ACORN-LICENSE
 ├── templates/
 │   └── SESSION-HANDOFF.md
 ├── tests/
@@ -90,11 +100,14 @@ continuous-development/
 │   ├── test_install_extension.py
 │   ├── test_watch_policy.py
 │   ├── test_watch_rpc.py
-│   └── test_watch_runtime.py
+│   ├── test_watch_runtime.py
+│   ├── test_js_bridge.py
+│   └── test_js_commands.cjs
 ├── docs/
 ├── EXAMPLES.md
 ├── README.md
 ├── README-WATCH.md
+├── README-JS-COMMANDS.md
 ├── README-安装说明.md
 ├── README-SESSION-MANAGEMENT.md
 ├── SUBAGENTS-INTEGRATION.md
@@ -478,3 +491,42 @@ MIT
 本扩展脚本只做安全解析和策略计算。实际会话管理、5分钟定时器和Git推送
 需要相应宿主工具/执行器接入并验证；安装文档不等于这些功能已经启用。
 <!-- /lifecycle-extension-v1: readme -->
+
+# js-command-extension-v1
+## JS 箭头函数与命令提示
+
+参见 [JS 命令使用说明](README-JS-COMMANDS.md)。支持命令别名、发送后的名称/参数提示，
+并附带本地补全 provider。**未安装原生 Codex/Codex++ 输入框实时弹窗插件。**
+`commands()` 查看全部；`a` 查看匹配；完整 `a("任务一","任务二")` 才生成调用计划。
+
+### JS 命令文件位置
+
+```text
+continuous-development/
+├── SKILL.md
+├── README-JS-COMMANDS.md
+├── js-commands.md
+├── commands/
+│   └── shortcuts.example.js
+├── scripts/
+│   ├── parse_invocation.py
+│   ├── js_command_bridge.py
+│   ├── js_commands.cjs
+│   ├── complete_command.py
+│   └── vendor/
+│       ├── acorn.cjs
+│       └── ACORN-LICENSE
+└── tests/
+    ├── test_js_bridge.py
+    └── test_js_commands.cjs
+```
+
+这些文件已按原仓库目录接入，不需要另外运行外层安装器。
+保留仓库原有 Python、会话管理和 watch 功能；只读提示不会启动开发。
+
+```text
+@continuous-development commands()
+@continuous-development a
+@continuous-development a(
+@continuous-development a("修复登录","添加回归测试")
+```
